@@ -1,7 +1,7 @@
 # SwiftUI MV 
 
 Many tutorials lead you to beleive that MVVM is a way to go in SwiftUI.
-Well... that is most probably WRONG!
+Well... that is most probably WRONG! Apple has never even used the term MVVM!
 
 MVVM is an anti-pattern in SwiftUI
 MVVM never told you about value type
@@ -54,3 +54,8 @@ struct ProductsLoadingView: View {
 ```
 
 There you have it, pure MV in vanilla SwiftUI
+
+# Further reading
+
+- Jim Lai on Medium: https://swift2931.medium.com/
+- Apple forums: https://developer.apple.com/forums/thread/699003
