@@ -10,7 +10,7 @@ struct ProductsLoadingView: View {
             ProductListView(products: sideEffet.value ?? [])
         }
         .onAppear {
-            $sideEffet.sideEffectLoad(ProductInteractor.getProducts)
+            $sideEffet.loadSideEffect(ProductInteractor.getProducts)
         }
     }
 }

@@ -52,6 +52,7 @@
 		44B650FD28E06EB400DA23C8 /* ImageLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingView.swift; sourceTree = "<group>"; };
 		44B650FF28E07EC100DA23C8 /* FutureExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureExtensions.swift; sourceTree = "<group>"; };
 		44B6510128E07EEA00DA23C8 /* BindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
+		44B6510328E08E0200DA23C8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		44C3A76C28DAED9100B8AEA7 /* mv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C3A76F28DAED9100B8AEA7 /* mvApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvApp.swift; sourceTree = "<group>"; };
 		44C3A77128DAED9100B8AEA7 /* ProductsLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsLoadingView.swift; sourceTree = "<group>"; };
@@ -136,6 +137,7 @@
 		44C3A76328DAED9100B8AEA7 = {
 			isa = PBXGroup;
 			children = (
+				44B6510328E08E0200DA23C8 /* README.md */,
 				44C3A76E28DAED9100B8AEA7 /* mv */,
 				44C3A77F28DAED9200B8AEA7 /* mvTests */,
 				44C3A78928DAED9200B8AEA7 /* mvUITests */,

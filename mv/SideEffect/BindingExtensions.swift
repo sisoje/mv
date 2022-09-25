@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 
 extension Binding {
-    func sideEffectLoad<P: Publisher>(_ publisher: P) where Value == SideEffect<P.Output> {
+    func loadSideEffect<P: Publisher>(_ publisher: P) where Value == SideEffect<P.Output> {
         wrappedValue.state = .loading(
             publisher
                 .receive(on: DispatchQueue.main)
@@ -19,7 +19,7 @@ extension Binding {
         )
     }
 
-    func sideEffectLoad<T>(_ asyncFunction: @escaping () async throws -> T) where Value == SideEffect<T> {
-        sideEffectLoad(Future(asyncFunction: asyncFunction))
+    func loadSideEffect<T>(_ asyncFunction: @escaping () async throws -> T) where Value == SideEffect<T> {
+        loadSideEffect(Future(asyncFunction: asyncFunction))
     }
 }

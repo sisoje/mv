@@ -14,7 +14,7 @@ struct ImageLoadingView: View {
         }
         .onAppear {
             if sideEffect.value == nil && sideEffect.state.isIdle {
-                $sideEffect.sideEffectLoad(ImageInteractor.getImage(url))
+                $sideEffect.loadSideEffect(ImageInteractor.getImage(url))
             }
         }
     }
