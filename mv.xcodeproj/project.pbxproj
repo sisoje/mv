@@ -23,7 +23,7 @@
 		44C3A78D28DAED9200B8AEA7 /* mvUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3A78C28DAED9200B8AEA7 /* mvUITestsLaunchTests.swift */; };
 		44C3A79A28DAEDC900B8AEA7 /* SideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3A79928DAEDC900B8AEA7 /* SideEffect.swift */; };
 		44C3A79C28DAF56300B8AEA7 /* ProductInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3A79B28DAF56200B8AEA7 /* ProductInteractor.swift */; };
-		44C3A79E28DAF57000B8AEA7 /* BackendApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3A79D28DAF57000B8AEA7 /* BackendApi.swift */; };
+		44C3A79E28DAF57000B8AEA7 /* NetworkingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3A79D28DAF57000B8AEA7 /* NetworkingData.swift */; };
 		44C3A7A028DAF5B400B8AEA7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C3A79F28DAF5B400B8AEA7 /* Product.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +65,7 @@
 		44C3A78C28DAED9200B8AEA7 /* mvUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		44C3A79928DAEDC900B8AEA7 /* SideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideEffect.swift; sourceTree = "<group>"; };
 		44C3A79B28DAF56200B8AEA7 /* ProductInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInteractor.swift; sourceTree = "<group>"; };
-		44C3A79D28DAF57000B8AEA7 /* BackendApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendApi.swift; sourceTree = "<group>"; };
+		44C3A79D28DAF57000B8AEA7 /* NetworkingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingData.swift; sourceTree = "<group>"; };
 		44C3A79F28DAF5B400B8AEA7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,7 +128,7 @@
 		44AD3AB028DD036500A6F720 /* BackendApi */ = {
 			isa = PBXGroup;
 			children = (
-				44C3A79D28DAF57000B8AEA7 /* BackendApi.swift */,
+				44C3A79D28DAF57000B8AEA7 /* NetworkingData.swift */,
 				44C3A79F28DAF5B400B8AEA7 /* Product.swift */,
 			);
 			path = BackendApi;
@@ -324,7 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44C3A79E28DAF57000B8AEA7 /* BackendApi.swift in Sources */,
+				44C3A79E28DAF57000B8AEA7 /* NetworkingData.swift in Sources */,
 				44B6510228E07EEA00DA23C8 /* BindingExtensions.swift in Sources */,
 				44AD3AA528DCFE1D00A6F720 /* ProductListView.swift in Sources */,
 				44AD3AB428DD04C400A6F720 /* SideEffectView.swift in Sources */,

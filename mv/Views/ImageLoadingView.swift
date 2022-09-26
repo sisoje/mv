@@ -4,9 +4,17 @@ struct ImageLoadingView: View {
     let url: URL
     @State private var sideEffect = SideEffect<Image>()
 
+    private var image: Image {
+        switch sideEffect.state {
+        case .loading:
+            return Image(systemName: "icloud.and.arrow.down")
+        case .idle:
+            return sideEffect.value ?? Image(systemName: "questionmark")
+        }
+    }
+    
     var body: some View {
         Group {
-            let image = sideEffect.value ?? Image(systemName: "questionmark")
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)

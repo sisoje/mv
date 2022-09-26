@@ -3,8 +3,8 @@
 Many tutorials lead you to beleive that MVVM is a way to go in SwiftUI.
 Well... that is most probably WRONG! Apple has never even used the term MVVM!
 
-MVVM is an anti-pattern in SwiftUI
-MVVM never told you about value type
+### MVVM is an anti-pattern in SwiftUI
+### MVVM never told you about value type
 
 In the past view model has to trigger view update somehow, (e.g.; third-party binding) so extra overhead may be justified.
 In SwiftUI binding is done in the Model, which conforms to View, NOT in ViewModel which conforms to ObservableObject; so the easiest way to trigger view update is inside the Model.
