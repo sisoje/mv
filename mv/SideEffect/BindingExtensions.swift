@@ -7,11 +7,8 @@ extension Binding {
             publisher
                 .receive(on: DispatchQueue.main)
                 .sink { completion in
-                    switch completion {
-                    case let .failure(error):
+                    if case let .failure(error) = completion {
                         wrappedValue.error = error
-                    default:
-                        break
                     }
                     wrappedValue.state = .idle
                 } receiveValue: { value in

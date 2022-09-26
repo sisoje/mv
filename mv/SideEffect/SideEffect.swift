@@ -13,12 +13,10 @@ struct SideEffect<T: Any> {
 
 extension SideEffect.State {
     var isIdle: Bool {
-        switch self {
-        case .idle:
-            return true
-        default:
+        guard case .idle = self else {
             return false
         }
+        return true
     }
 
     var isLoading: Bool {
