@@ -1,5 +1,5 @@
-import SwiftUI
 import Combine
+import SwiftUI
 
 extension Binding {
     func loadSideEffect<P: Publisher>(_ publisher: P) where Value == SideEffect<P.Output> {
@@ -8,11 +8,12 @@ extension Binding {
                 .receive(on: DispatchQueue.main)
                 .sink { completion in
                     switch completion {
-                    case .finished:
-                        wrappedValue.state = .idle
                     case let .failure(error):
                         wrappedValue.error = error
+                    default:
+                        break
                     }
+                    wrappedValue.state = .idle
                 } receiveValue: { value in
                     wrappedValue.value = value
                 }
