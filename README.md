@@ -53,6 +53,8 @@ struct ProductsLoadingView: View {
 }
 ```
 
+Here the `ProductInteractor.getProducts` is any throwable async function that returns `[Product]`. You can also use `Publisher` that publishes `[Product]`.
+
 There you have it, pure MV in vanilla SwiftUI
 
 # Further reading
