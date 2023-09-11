@@ -59,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E8158DF2AAFDEEC0007C303 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7EB8EC5D2AAFD575009DF876 /* iosMV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosMV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB8EC602AAFD575009DF876 /* iosMVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosMVApp.swift; sourceTree = "<group>"; };
 		7EB8EC642AAFD577009DF876 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,6 +117,7 @@
 		7EB8EC542AAFD575009DF876 = {
 			isa = PBXGroup;
 			children = (
+				7E8158DF2AAFDEEC0007C303 /* README.md */,
 				7EB8EC8E2AAFD5EC009DF876 /* Actions */,
 				7EB8EC922AAFD5ED009DF876 /* Model */,
 				7EB8EC8A2AAFD5EC009DF876 /* View */,
@@ -139,7 +141,6 @@
 		7EB8EC5F2AAFD575009DF876 /* iosMV */ = {
 			isa = PBXGroup;
 			children = (
-				7EB8ECB82AAFD6B2009DF876 /* BindingExtensions.swift */,
 				7EB8ECB92AAFD6B2009DF876 /* Env.swift */,
 				7EB8EC602AAFD575009DF876 /* iosMVApp.swift */,
 				7EB8EC642AAFD577009DF876 /* Assets.xcassets */,
@@ -176,6 +177,7 @@
 		7EB8EC8A2AAFD5EC009DF876 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7EB8ECB82AAFD6B2009DF876 /* BindingExtensions.swift */,
 				7EB8EC8B2AAFD5EC009DF876 /* LoadableValue+Binding.swift */,
 				7EB8EC8C2AAFD5EC009DF876 /* PokemonColorView.swift */,
 				7EB8EC8D2AAFD5EC009DF876 /* PokemonColorsView.swift */,
@@ -186,7 +188,6 @@
 		7EB8EC8E2AAFD5EC009DF876 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
-				7EB8EC8F2AAFD5EC009DF876 /* Pokemons.swift */,
 				7EB8EC902AAFD5EC009DF876 /* RestApi.swift */,
 				7EB8EC912AAFD5EC009DF876 /* EnvironmentValues+RestApi.swift */,
 			);
@@ -196,6 +197,7 @@
 		7EB8EC922AAFD5ED009DF876 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7EB8EC8F2AAFD5EC009DF876 /* Pokemons.swift */,
 				7EB8EC932AAFD5ED009DF876 /* LoadableValue.swift */,
 			);
 			path = Model;

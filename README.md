@@ -1,4 +1,4 @@
-# SwiftUI MV 
+# SwiftUI MV - with unit and UI testing
 
 Many tutorials lead you to beleive that MVVM is a way to go in SwiftUI.
 Well... that is most probably WRONG! Apple has never even used the term MVVM!
@@ -23,39 +23,19 @@ Like the name suggests, “Model” is the model type. It conforms to View, it i
 
 @State allows you to do (state change -> view update) without intermediate objects. A @State value type object is always preferable when viable.
 
-Here I demonstrate how to use simple @State to make a data loading Model using a simple SideEffect structure:
+Here I demonstrate how to use simple @State to make a data loading Model using a simple LoadableValue structure:
 ```
-struct SideEffect<T: Any> {
+struct LoadableValue<T: Any> {
     enum State {
         case idle
-        case loading(AnyCancellable)
+        case loading
     }
 
+    var state: State = .idle
     var value: T?
     var error: Error?
-    var state: State = .idle
 }
 ```
-
-And then we make a simple View:
-
-```
-struct ProductsLoadingView: View {
-    @State private var sideEffet = SideEffect<[Product]>()
-    var body: some View {
-        VStack {            
-            ProductListView(products: sideEffet.value ?? [])
-        }
-        .onAppear {
-            $sideEffet.loadSideEffect(ProductInteractor.getProducts)
-        }
-    }
-}
-```
-
-Here the `ProductInteractor.getProducts` is any throwable async function that returns `[Product]`. You can also use `Publisher` that publishes `[Product]`.
-
-There you have it, pure MV in vanilla SwiftUI
 
 # Further reading
 
