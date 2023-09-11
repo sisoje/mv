@@ -1,0 +1,94 @@
+[
+  {
+    "request" : {
+      "url" : "https:\/\/pokeapi.co\/api\/v2\/pokemon-color",
+      "method" : "GET",
+      "headers" : {
+
+      }
+    },
+    "response" : {
+      "dataOrString" : {
+        "string" : {
+          "_0" : "{\"count\":10,\"next\":null,\"previous\":null,\"results\":[{\"name\":\"black\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-color\/1\/\"},{\"name\":\"blue\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-color\/2\/\"},{\"name\":\"brown\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-color\/3\/\"},{\"name\":\"gray\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-color\/4\/\"},{\"name\":\"green\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-color\/5\/\"},{\"name\":\"pink\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-color\/6\/\"},{\"name\":\"purple\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-color\/7\/\"},{\"name\":\"red\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-color\/8\/\"},{\"name\":\"white\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-color\/9\/\"},{\"name\":\"yellow\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-color\/10\/\"}]}"
+        }
+      },
+      "codableUrlResponse" : {
+        "url" : "https:\/\/pokeapi.co\/api\/v2\/pokemon-color",
+        "statusCode" : 200,
+        "headers" : {
+          "cf-cache-status" : "HIT",
+          "Alt-Svc" : "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400",
+          "x-timer" : "S1678861542.952833,VS0,VE12",
+          "x-cloud-trace-context" : "c598f00830cbb526265545d0b4e6593d",
+          "x-served-by" : "cache-jnb7022-JNB",
+          "Cache-Control" : "public, max-age=86400, s-maxage=86400",
+          "report-to" : "{\"endpoints\":[{\"url\":\"https:\\\/\\\/a.nel.cloudflare.com\\\/report\\\/v3?s=2wGi3p2o09TwkSrhI4%2FwvHfuGYZR38dhqXgTXfaFodN75hQMD6zshyuV%2F6WcM65ZxHJcu6q2UKpJqwVVJn%2Bmm6u77UgAcEDud%2BqwcK6S%2BjzdHh55QLBz2vwu2T3V\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+          "x-orig-accept-language" : "sv,en;q=0.9,en-US;q=0.8,sv-SE;q=0.7",
+          "Content-Type" : "application\/json; charset=utf-8",
+          "Date" : "Thu, 16 Mar 2023 14:02:35 GMT",
+          "Vary" : "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
+          "Content-Encoding" : "br",
+          "Access-Control-Allow-Origin" : "*",
+          "x-cache-hits" : "1",
+          "Strict-Transport-Security" : "max-age=31556926",
+          "function-execution-id" : "ehc0vnw0ljfl",
+          "Etag" : "W\/\"2da-E8q0\/EN9b2ZFP02KWSozxm6W8PI\"",
+          "nel" : "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+          "Age" : "4506",
+          "Server" : "cloudflare",
+          "x-cache" : "HIT",
+          "x-country-code" : "ZA",
+          "cf-ray" : "7a8d88e258724107-PRG",
+          "x-powered-by" : "Express"
+        }
+      }
+    }
+  },
+  {
+    "request" : {
+      "url" : "https:\/\/pokeapi.co\/api\/v2\/pokemon-color\/black",
+      "method" : "GET",
+      "headers" : {
+
+      }
+    },
+    "response" : {
+      "dataOrString" : {
+        "string" : {
+          "_0" : "{\"id\":1,\"name\":\"black\",\"names\":[{\"language\":{\"name\":\"ja-Hrkt\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/language\/1\/\"},\"name\":\"くろいろ\"},{\"language\":{\"name\":\"ko\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/language\/3\/\"},\"name\":\"검정\"},{\"language\":{\"name\":\"zh-Hant\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/language\/4\/\"},\"name\":\"黑色\"},{\"language\":{\"name\":\"fr\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/language\/5\/\"},\"name\":\"Noir\"},{\"language\":{\"name\":\"de\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/language\/6\/\"},\"name\":\"Schwarz\"},{\"language\":{\"name\":\"es\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/language\/7\/\"},\"name\":\"Negro\"},{\"language\":{\"name\":\"it\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/language\/8\/\"},\"name\":\"Nero\"},{\"language\":{\"name\":\"en\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/language\/9\/\"},\"name\":\"Black\"},{\"language\":{\"name\":\"ja\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/language\/11\/\"},\"name\":\"黒色\"},{\"language\":{\"name\":\"zh-Hans\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/language\/12\/\"},\"name\":\"黑色\"}],\"pokemon_species\":[{\"name\":\"murkrow\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/198\/\"},{\"name\":\"unown\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/201\/\"},{\"name\":\"sneasel\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/215\/\"},{\"name\":\"houndour\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/228\/\"},{\"name\":\"mawile\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/303\/\"},{\"name\":\"spoink\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/325\/\"},{\"name\":\"seviper\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/336\/\"},{\"name\":\"shuppet\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/353\/\"},{\"name\":\"duskull\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/355\/\"},{\"name\":\"chatot\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/441\/\"},{\"name\":\"munchlax\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/446\/\"},{\"name\":\"honchkrow\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/430\/\"},{\"name\":\"giratina\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/487\/\"},{\"name\":\"darkrai\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/491\/\"},{\"name\":\"blitzle\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/522\/\"},{\"name\":\"sigilyph\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/561\/\"},{\"name\":\"yamask\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/562\/\"},{\"name\":\"zekrom\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/644\/\"},{\"name\":\"scatterbug\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/664\/\"},{\"name\":\"pikipek\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/731\/\"},{\"name\":\"salandit\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/757\/\"},{\"name\":\"pyukumuku\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/771\/\"},{\"name\":\"xurkitree\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/796\/\"},{\"name\":\"guzzlord\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/799\/\"},{\"name\":\"necrozma\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/800\/\"},{\"name\":\"rolycoly\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/837\/\"},{\"name\":\"spectrier\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/897\/\"},{\"name\":\"wattrel\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/940\/\"},{\"name\":\"snorlax\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/143\/\"},{\"name\":\"umbreon\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/197\/\"},{\"name\":\"houndoom\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/229\/\"},{\"name\":\"claydol\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/344\/\"},{\"name\":\"banette\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/354\/\"},{\"name\":\"dusclops\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/356\/\"},{\"name\":\"weavile\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/461\/\"},{\"name\":\"dusknoir\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/477\/\"},{\"name\":\"zebstrika\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/523\/\"},{\"name\":\"lampent\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/608\/\"},{\"name\":\"chandelure\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/609\/\"},{\"name\":\"spewpa\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/665\/\"},{\"name\":\"trumbeak\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/732\/\"},{\"name\":\"toucannon\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/733\/\"},{\"name\":\"salazzle\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/758\/\"},{\"name\":\"carkol\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/838\/\"},{\"name\":\"coalossal\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/839\/\"},{\"name\":\"overqwil\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/904\/\"},{\"name\":\"toedscruel\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/949\/\"},{\"name\":\"kingambit\",\"url\":\"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/983\/\"}]}"
+        }
+      },
+      "codableUrlResponse" : {
+        "url" : "https:\/\/pokeapi.co\/api\/v2\/pokemon-color\/black",
+        "statusCode" : 200,
+        "headers" : {
+          "x-country-code" : "ZA",
+          "Alt-Svc" : "h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400",
+          "x-timer" : "S1678970851.277423,VS0,VE1",
+          "x-cloud-trace-context" : "3867386b840cc4f40a0782d658298a8c",
+          "Cache-Control" : "public, max-age=86400, s-maxage=86400",
+          "x-served-by" : "cache-jnb7025-JNB",
+          "report-to" : "{\"endpoints\":[{\"url\":\"https:\\\/\\\/a.nel.cloudflare.com\\\/report\\\/v3?s=FVA2YsEcyHf%2BbWKTyh93wnKka3dGNEw6p4X9X5FqZzbp96UZvt0uxE%2FvD5nQD5qRfb3gxK0FtiXrKViTZWFwgk7dqS1ddNUhTduDBTINQV%2FHde%2B1N6VSweKvWldr\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+          "x-orig-accept-language" : "en-GB,en-US;q=0.9,en;q=0.8",
+          "Content-Type" : "application\/json; charset=utf-8",
+          "Date" : "Thu, 16 Mar 2023 14:02:36 GMT",
+          "Vary" : "Accept-Encoding,cookie,need-authorization, x-fh-requested-host, accept-encoding",
+          "Content-Encoding" : "br",
+          "Access-Control-Allow-Origin" : "*",
+          "x-cache-hits" : "1",
+          "Strict-Transport-Security" : "max-age=31556926",
+          "function-execution-id" : "s28ujwk7wbo0",
+          "Etag" : "W\/\"11bf-FluNqGjMMOcKbZNVdm\/1XXtjFMg\"",
+          "nel" : "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+          "x-cache" : "HIT",
+          "Server" : "cloudflare",
+          "Age" : "4505",
+          "cf-cache-status" : "HIT",
+          "cf-ray" : "7a8d88e79fea4107-PRG",
+          "x-powered-by" : "Express"
+        }
+      }
+    }
+  }
+]
