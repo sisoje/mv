@@ -36,5 +36,6 @@ struct PokemonColorsView: View {
 struct PokemonColorsView_Previews: PreviewProvider {
     static var previews: some View {
         PokemonColorsView()
+            .environment(\.pokemonData, PokemonPreviewData())
     }
 }

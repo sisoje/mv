@@ -1,5 +1,9 @@
 # SwiftUI MV - with unit and UI testing
 
+### Things achieved
+- no reference-type view-models just value-type models
+- mocked and snapshotted UI tests
+
 Many tutorials lead you to beleive that MVVM is a way to go in SwiftUI.
 Well... that is most probably WRONG! Apple has never even used the term MVVM!
 
@@ -11,10 +15,15 @@ In SwiftUI binding is done in the Model, which conforms to View, NOT in ViewMode
 
 Example:
 ```
-struct Model: View {
+struct Model {
     @State var data = "somedata"
-    func doSeomthing() {
+    func doSomething() {
         data = "newdata" // trigger view update
+    }
+}
+extension Model: View {
+    var body: some View {
+        Text(data)
     }
 }
 ```
