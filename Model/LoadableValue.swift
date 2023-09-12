@@ -1,7 +1,9 @@
+import Combine
+
 struct LoadableValue<T: Any> {
-    enum State {
+  enum State: Equatable {
         case idle
-        case loading
+        case loading(AnyCancellable?)
     }
 
     var state: State = .idle
@@ -10,7 +12,7 @@ struct LoadableValue<T: Any> {
 }
 
 extension LoadableValue.State {
-    var isLoading: Bool { self == .loading }
+    var isLoading: Bool { self != .idle }
     var isIdle: Bool { self == .idle }
 }
 

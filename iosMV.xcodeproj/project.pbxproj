@@ -126,7 +126,9 @@
 				7EB8EC7A2AAFD578009DF876 /* iosMVUITests */,
 				7EB8EC5E2AAFD575009DF876 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		7EB8EC5E2AAFD575009DF876 /* Products */ = {
 			isa = PBXGroup;
