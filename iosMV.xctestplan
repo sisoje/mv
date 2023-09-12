@@ -1,0 +1,46 @@
+{
+  "configurations" : [
+    {
+      "id" : "22BC82AF-A088-4BA4-BAAA-286253447594",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:iosMV.xcodeproj",
+          "identifier" : "7EB8EC5C2AAFD575009DF876",
+          "name" : "iosMV"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:iosMV.xcodeproj",
+      "identifier" : "7EB8EC5C2AAFD575009DF876",
+      "name" : "iosMV"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:iosMV.xcodeproj",
+        "identifier" : "7EB8EC6C2AAFD577009DF876",
+        "name" : "iosMVTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:iosMV.xcodeproj",
+        "identifier" : "7EB8EC762AAFD578009DF876",
+        "name" : "iosMVUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
