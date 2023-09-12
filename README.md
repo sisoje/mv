@@ -51,7 +51,7 @@ Reference-type view-models are needed only when we share data between multiple v
 
 ## Network snapshot tests
 
- Snapshot testing does not have to involve images. In this case we snapshot network responses and save them for later reproduction during testing.
+ Snapshot testing does not have to involve images. In this case we snapshot network responses and save them to a file for later reproduction during testing.
  
  The App "communicates" with UI testing frameworks using `EnvironmentKeys` and `LaunchArguments`
  
