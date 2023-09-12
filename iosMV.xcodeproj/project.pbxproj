@@ -188,11 +188,11 @@
 		7EB8EC8A2AAFD5EC009DF876 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7EB8EC912AAFD5EC009DF876 /* EnvironmentValues+PokemonData.swift */,
 				7EB8ECB82AAFD6B2009DF876 /* BindingExtensions.swift */,
+				7EB8EC912AAFD5EC009DF876 /* EnvironmentValues+PokemonData.swift */,
 				7EB8EC8B2AAFD5EC009DF876 /* LoadableValue+Binding.swift */,
-				7EB8EC8C2AAFD5EC009DF876 /* PokemonColorView.swift */,
 				7EB8EC8D2AAFD5EC009DF876 /* PokemonColorsView.swift */,
+				7EB8EC8C2AAFD5EC009DF876 /* PokemonColorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,9 +209,9 @@
 		7EB8EC922AAFD5ED009DF876 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7EB8EC8F2AAFD5EC009DF876 /* Pokemons.swift */,
 				7EB8EC932AAFD5ED009DF876 /* LoadableValue.swift */,
 				7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */,
+				7EB8EC8F2AAFD5EC009DF876 /* Pokemons.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,13 +220,13 @@
 			isa = PBXGroup;
 			children = (
 				7EB8ECB52AAFD662009DF876 /* TestingFiles */,
-				7EB8EC9C2AAFD64F009DF876 /* TestingFileUtilities.swift */,
-				7EB8EC9D2AAFD64F009DF876 /* MockURLProtocol.swift */,
-				7EB8EC9E2AAFD64F009DF876 /* EnvironmentKeys.swift */,
-				7EB8ECA12AAFD64F009DF876 /* CodableHttp.swift */,
-				7EB8ECA22AAFD64F009DF876 /* InterceptURLProtocol.swift */,
 				7EB8ECA32AAFD64F009DF876 /* AppLaunchConfig.swift */,
+				7EB8ECA12AAFD64F009DF876 /* CodableHttp.swift */,
+				7EB8EC9E2AAFD64F009DF876 /* EnvironmentKeys.swift */,
+				7EB8ECA22AAFD64F009DF876 /* InterceptURLProtocol.swift */,
 				7EB8ECA42AAFD64F009DF876 /* LaunchArguments.swift */,
+				7EB8EC9D2AAFD64F009DF876 /* MockURLProtocol.swift */,
+				7EB8EC9C2AAFD64F009DF876 /* TestingFileUtilities.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -235,8 +235,8 @@
 			isa = PBXGroup;
 			children = (
 				7EB8ECBD2AAFD719009DF876 /* BaseUiTest.swift */,
-				7EB8ECBE2AAFD719009DF876 /* TestUtilities.swift */,
 				7EB8ECBF2AAFD719009DF876 /* iosMVUITests.swift */,
+				7EB8ECBE2AAFD719009DF876 /* TestUtilities.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";

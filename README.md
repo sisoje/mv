@@ -1,8 +1,10 @@
 # SwiftUI MV - with unit and UI testing
 
-### Things achieved
+## Goals achieved
 - no reference-type view-models just value-type models
-- mocked and snapshotted UI tests
+- network "snapshot" UI tests
+
+## MV
 
 Many tutorials lead you to beleive that MVVM is a way to go in SwiftUI.
 Well... that is most probably WRONG! Apple has never even used the term MVVM!
@@ -39,12 +41,31 @@ struct LoadableValue<T: Any> {
         case idle
         case loading
     }
-
     var state: State = .idle
     var value: T?
     var error: Error?
 }
 ```
+
+Reference-type view-models are needed only when we share data between multiple views
+
+## Network snapshot tests
+
+ Snapshot testing does not have to involve images. In this case we snapshot network responses and save them for later reproduction during testing.
+ 
+ The App "communicates" with UI testing frameworks using `EnvironmentKeys` and `LaunchArguments`
+ 
+ We use the same test for making snapshots and for "replaying" them in the test run. We use EnvironmentKeys and either provide recording file name or snapshot file name.
+ ```
+ enum EnvironmentKeys: String {
+    case recordResponseFileName
+    case mockResponseFileName
+}
+```
+
+When we make snapshots then after each test run we "press" home button to indicate that the app needs to save network responses to the file.
+
+Now thats how you get test coverage of about 70% easily, without test induced design damage.
 
 # Further reading
 

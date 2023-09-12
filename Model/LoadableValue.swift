@@ -1,7 +1,7 @@
 import Combine
 
 struct LoadableValue<T: Any> {
-  enum State: Equatable {
+    enum State: Equatable {
         case idle
         case loading(AnyCancellable?)
     }
