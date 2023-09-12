@@ -1,10 +1,3 @@
-//
-//  iosMVApp.swift
-//  iosMV
-//
-//  Created by Lazar Otasevic on 12.9.23..
-//
-
 import SwiftUI
 
 @main

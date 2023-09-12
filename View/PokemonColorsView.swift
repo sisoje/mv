@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PokemonColorsView: View {
-    @Environment(\.getPokemonColors) private var getPokemonColors
+    @Environment(\.pokemonData) private var pokemonData
     @State private var pokemonColors: LoadableValue<PokemonColorsResponse> = .init()
 
     var body: some View {
@@ -15,16 +15,13 @@ struct PokemonColorsView: View {
                 }
             }
             .refreshable {
-                await $pokemonColors.loadAsync(getPokemonColors)
+                await $pokemonColors.loadAsync(pokemonData.getPokemonColors)
             }
             .task {
-                await $pokemonColors.loadAsync(getPokemonColors)
+                await $pokemonColors.loadAsync(pokemonData.getPokemonColors)
             }
             .overlay {
-                if
-                    !pokemonColors.hasValue,
-                    pokemonColors.state.isLoading
-                {
+                if pokemonColors.state.isLoading {
                     ProgressView()
                 }
             }

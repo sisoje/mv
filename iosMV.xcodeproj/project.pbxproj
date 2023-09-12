@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E8158E12AB0745B0007C303 /* PokemonDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */; };
+		7E8158E32AB074BE0007C303 /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E22AB074BE0007C303 /* URLSessionExtensions.swift */; };
 		7EB8EC612AAFD575009DF876 /* iosMVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8EC602AAFD575009DF876 /* iosMVApp.swift */; };
 		7EB8EC652AAFD577009DF876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB8EC642AAFD577009DF876 /* Assets.xcassets */; };
 		7EB8EC682AAFD577009DF876 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB8EC672AAFD577009DF876 /* Preview Assets.xcassets */; };
@@ -15,8 +17,8 @@
 		7EB8EC952AAFD5ED009DF876 /* PokemonColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8EC8C2AAFD5EC009DF876 /* PokemonColorView.swift */; };
 		7EB8EC962AAFD5ED009DF876 /* PokemonColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8EC8D2AAFD5EC009DF876 /* PokemonColorsView.swift */; };
 		7EB8EC972AAFD5ED009DF876 /* Pokemons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8EC8F2AAFD5EC009DF876 /* Pokemons.swift */; };
-		7EB8EC982AAFD5ED009DF876 /* RestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8EC902AAFD5EC009DF876 /* RestApi.swift */; };
-		7EB8EC992AAFD5ED009DF876 /* EnvironmentValues+RestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8EC912AAFD5EC009DF876 /* EnvironmentValues+RestApi.swift */; };
+		7EB8EC982AAFD5ED009DF876 /* PokemonRestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8EC902AAFD5EC009DF876 /* PokemonRestApi.swift */; };
+		7EB8EC992AAFD5ED009DF876 /* EnvironmentValues+PokemonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8EC912AAFD5EC009DF876 /* EnvironmentValues+PokemonData.swift */; };
 		7EB8EC9A2AAFD5ED009DF876 /* LoadableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8EC932AAFD5ED009DF876 /* LoadableValue.swift */; };
 		7EB8ECA52AAFD64F009DF876 /* TestingFileUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8EC9C2AAFD64F009DF876 /* TestingFileUtilities.swift */; };
 		7EB8ECA62AAFD64F009DF876 /* TestingFileUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8EC9C2AAFD64F009DF876 /* TestingFileUtilities.swift */; };
@@ -60,6 +62,8 @@
 
 /* Begin PBXFileReference section */
 		7E8158DF2AAFDEEC0007C303 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDataProtocol.swift; sourceTree = "<group>"; };
+		7E8158E22AB074BE0007C303 /* URLSessionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtensions.swift; sourceTree = "<group>"; };
 		7EB8EC5D2AAFD575009DF876 /* iosMV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosMV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB8EC602AAFD575009DF876 /* iosMVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosMVApp.swift; sourceTree = "<group>"; };
 		7EB8EC642AAFD577009DF876 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,8 +75,8 @@
 		7EB8EC8C2AAFD5EC009DF876 /* PokemonColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonColorView.swift; sourceTree = "<group>"; };
 		7EB8EC8D2AAFD5EC009DF876 /* PokemonColorsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonColorsView.swift; sourceTree = "<group>"; };
 		7EB8EC8F2AAFD5EC009DF876 /* Pokemons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemons.swift; sourceTree = "<group>"; };
-		7EB8EC902AAFD5EC009DF876 /* RestApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApi.swift; sourceTree = "<group>"; };
-		7EB8EC912AAFD5EC009DF876 /* EnvironmentValues+RestApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+RestApi.swift"; sourceTree = "<group>"; };
+		7EB8EC902AAFD5EC009DF876 /* PokemonRestApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonRestApi.swift; sourceTree = "<group>"; };
+		7EB8EC912AAFD5EC009DF876 /* EnvironmentValues+PokemonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+PokemonData.swift"; sourceTree = "<group>"; };
 		7EB8EC932AAFD5ED009DF876 /* LoadableValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadableValue.swift; sourceTree = "<group>"; };
 		7EB8EC9C2AAFD64F009DF876 /* TestingFileUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingFileUtilities.swift; sourceTree = "<group>"; };
 		7EB8EC9D2AAFD64F009DF876 /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
@@ -118,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				7E8158DF2AAFDEEC0007C303 /* README.md */,
-				7EB8EC8E2AAFD5EC009DF876 /* Actions */,
+				7EB8EC8E2AAFD5EC009DF876 /* Networking */,
 				7EB8EC922AAFD5ED009DF876 /* Model */,
 				7EB8EC8A2AAFD5EC009DF876 /* View */,
 				7EB8EC5F2AAFD575009DF876 /* iosMV */,
@@ -179,6 +183,7 @@
 		7EB8EC8A2AAFD5EC009DF876 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7EB8EC912AAFD5EC009DF876 /* EnvironmentValues+PokemonData.swift */,
 				7EB8ECB82AAFD6B2009DF876 /* BindingExtensions.swift */,
 				7EB8EC8B2AAFD5EC009DF876 /* LoadableValue+Binding.swift */,
 				7EB8EC8C2AAFD5EC009DF876 /* PokemonColorView.swift */,
@@ -187,13 +192,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7EB8EC8E2AAFD5EC009DF876 /* Actions */ = {
+		7EB8EC8E2AAFD5EC009DF876 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				7EB8EC902AAFD5EC009DF876 /* RestApi.swift */,
-				7EB8EC912AAFD5EC009DF876 /* EnvironmentValues+RestApi.swift */,
+				7EB8EC902AAFD5EC009DF876 /* PokemonRestApi.swift */,
+				7E8158E22AB074BE0007C303 /* URLSessionExtensions.swift */,
 			);
-			path = Actions;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		7EB8EC922AAFD5ED009DF876 /* Model */ = {
@@ -201,6 +206,7 @@
 			children = (
 				7EB8EC8F2AAFD5EC009DF876 /* Pokemons.swift */,
 				7EB8EC932AAFD5ED009DF876 /* LoadableValue.swift */,
+				7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -365,14 +371,16 @@
 				7EB8ECAF2AAFD64F009DF876 /* InterceptURLProtocol.swift in Sources */,
 				7EB8ECB32AAFD64F009DF876 /* LaunchArguments.swift in Sources */,
 				7EB8EC952AAFD5ED009DF876 /* PokemonColorView.swift in Sources */,
+				7E8158E32AB074BE0007C303 /* URLSessionExtensions.swift in Sources */,
 				7EB8ECBB2AAFD6B2009DF876 /* Env.swift in Sources */,
 				7EB8ECB12AAFD64F009DF876 /* AppLaunchConfig.swift in Sources */,
+				7E8158E12AB0745B0007C303 /* PokemonDataProtocol.swift in Sources */,
 				7EB8EC972AAFD5ED009DF876 /* Pokemons.swift in Sources */,
 				7EB8ECA72AAFD64F009DF876 /* MockURLProtocol.swift in Sources */,
 				7EB8ECAD2AAFD64F009DF876 /* CodableHttp.swift in Sources */,
-				7EB8EC992AAFD5ED009DF876 /* EnvironmentValues+RestApi.swift in Sources */,
+				7EB8EC992AAFD5ED009DF876 /* EnvironmentValues+PokemonData.swift in Sources */,
 				7EB8EC962AAFD5ED009DF876 /* PokemonColorsView.swift in Sources */,
-				7EB8EC982AAFD5ED009DF876 /* RestApi.swift in Sources */,
+				7EB8EC982AAFD5ED009DF876 /* PokemonRestApi.swift in Sources */,
 				7EB8ECA52AAFD64F009DF876 /* TestingFileUtilities.swift in Sources */,
 				7EB8EC612AAFD575009DF876 /* iosMVApp.swift in Sources */,
 				7EB8ECA92AAFD64F009DF876 /* EnvironmentKeys.swift in Sources */,

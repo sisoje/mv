@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PokemonColorView: View {
     let colorName: String
-    @Environment(\.getPokemonColor) private var getPokemonColor
+    @Environment(\.pokemonData) private var pokemonData
     @State private var pokemonColor: LoadableValue<PokemonColorResponse> = .init()
 
     var body: some View {
@@ -14,12 +14,12 @@ struct PokemonColorView: View {
         }
         .refreshable {
             await $pokemonColor.loadAsync {
-                try await getPokemonColor(colorName)
+                try await pokemonData.getPokemonColor(colorName: colorName)
             }
         }
         .task {
             await $pokemonColor.loadAsync {
-                try await getPokemonColor(colorName)
+                try await pokemonData.getPokemonColor(colorName: colorName)
             }
         }
         .alert(Text("Error"), isPresented: .boolify($pokemonColor.error)) {
@@ -27,10 +27,7 @@ struct PokemonColorView: View {
         }
         .navigationTitle("Species")
         .overlay {
-            if
-                !pokemonColor.hasValue,
-                pokemonColor.state.isLoading
-            {
+            if pokemonColor.state.isLoading {
                 ProgressView()
             }
         }

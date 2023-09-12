@@ -1,8 +1,7 @@
 import SwiftUI
 
 extension Binding {
-    func loadAsync<T: Any>(_ asyncFunc: () async throws -> T) async where Value == LoadableValue<T> {
-        wrappedValue.state = .loading(nil)
+    private func doLoad<T: Any>(_ asyncFunc: () async throws -> T) async where Value == LoadableValue<T> {
         do {
             let value = try await asyncFunc()
             wrappedValue.state = .idle
@@ -10,8 +9,20 @@ extension Binding {
                 wrappedValue.value = value
             }
         } catch {
-            wrappedValue.error = error
             wrappedValue.state = .idle
+            wrappedValue.error = error
         }
+    }
+
+    func loadAsync<T: Any>(_ asyncFunc: () async throws -> T) async where Value == LoadableValue<T> {
+        wrappedValue.state = .loading(nil)
+        await doLoad(asyncFunc)
+    }
+
+    func loadSync<T: Any>(_ asyncFunc: @escaping () async throws -> T) where Value == LoadableValue<T> {
+        let task = Task {
+            await doLoad(asyncFunc)
+        }
+        wrappedValue.state = .loading(.init(task.cancel))
     }
 }
