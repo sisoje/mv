@@ -23,6 +23,6 @@ extension Binding {
         let task = Task {
             await doLoad(asyncFunc)
         }
-        wrappedValue.state = .loading(.init(task.cancel))
+        wrappedValue.state = .loading(.init(task))
     }
 }

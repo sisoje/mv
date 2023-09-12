@@ -2,7 +2,7 @@
 
 ## Goals achieved
 - no reference-type view-models just value-type models
-- network "snapshot" UI tests
+- network "snapshotting" UI tests
 
 ## MV
 
@@ -37,9 +37,9 @@ Like the name suggests, “Model” is the model type. It conforms to View, it i
 Here I demonstrate how to use simple `@State` to make a data loading Model using a simple `LoadableValue` structure:
 ```
 struct LoadableValue<T: Any> {
-    enum State {
+    enum State: Equatable {
         case idle
-        case loading
+        case loading(TaskCancellable?)
     }
     var state: State = .idle
     var value: T?
@@ -49,13 +49,15 @@ struct LoadableValue<T: Any> {
 
 Reference-type view-models are needed only when we share data between multiple views
 
-## Network snapshot tests
+## Network snapshotting tests
 
- Snapshot testing does not have to involve images. In this case we snapshot network responses and save them to a file for later reproduction during testing.
- 
- The App "communicates" with UI testing frameworks using `EnvironmentKeys` and `LaunchArguments`
- 
- We use the same test for making snapshots and for "replaying" them in the test run. We use `EnvironmentKeys` and either provide recording file name or snapshot file name.
+We need to isolate tests from the network calls. We use `URLProtocol` technique. For this purpose we developed two specific protocols: `InterceptURLProtocol` and `MockURLProtocol`
+
+Snapshot testing does not have to involve images. In this case we snapshot real network responses and save them to a file for later reproduction during testing.
+
+The App "communicates" with UI testing frameworks using `EnvironmentKeys` and `LaunchArguments`
+
+We use the same test for making snapshots and for "replaying" them in the test run. We use `EnvironmentKeys` and either provide recording file name to read responses or snapshot file name to record responses.
  ```
  enum EnvironmentKeys: String {
     case recordResponseFileName
@@ -63,11 +65,9 @@ Reference-type view-models are needed only when we share data between multiple v
 }
 ```
 
-For this purpose we use two protocols: `InterceptURLProtocol` and `MockURLProtocol`
+When we make snapshots then after each test run we simulate "press" home button to indicate that the app needs to save network responses to the file.
 
-When we make snapshots then after each test run we "press" home button to indicate that the app needs to save network responses to the file.
-
-Now thats how you get test coverage of about 70% easily, without test induced design damage.
+Now thats how you get test coverage of about 70% easily without test induced design damage.
 
 # Further reading
 

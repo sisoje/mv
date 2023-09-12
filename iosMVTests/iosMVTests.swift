@@ -16,7 +16,7 @@ final class iosMVTests: XCTestCase {
         XCTAssertFalse(boolBinding.wrappedValue)
         XCTAssertNil(intVal)
     }
-    
+
     func testEnvDebug() {
         XCTAssertTrue(Env.isDebug)
         XCTAssertTrue(Env.isUnitTesting)

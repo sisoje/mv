@@ -23,7 +23,7 @@ struct PokemonColorView: View {
             }
         }
         .alert(Text("Error"), isPresented: .boolify($pokemonColor.error)) {
-            Button("OK", role: .cancel) { }
+            Button("OK", role: .cancel) {}
         }
         .navigationTitle("Species")
         .overlay {

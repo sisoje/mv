@@ -1,5 +1,3 @@
-import Foundation
-
 struct PokemonColorsResponse: Codable {
     let count: Int
     let results: [PokemonColor]
