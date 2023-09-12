@@ -5,7 +5,6 @@ struct LoadableValue<T: Any> {
         case idle
         case loading(AnyCancellable?)
     }
-
     var state: State = .idle
     var value: T?
     var error: Error?

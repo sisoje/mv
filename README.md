@@ -32,9 +32,9 @@ extension Model: View {
 
 Like the name suggests, “Model” is the model type. It conforms to View, it is used to render view, but it is NOT View!
 
-@State allows you to do (state change -> view update) without intermediate objects. A @State value type object is always preferable when viable.
+`@State` allows you to do (state change -> view update) without intermediate objects. A `@State` value type object is always preferable when viable.
 
-Here I demonstrate how to use simple @State to make a data loading Model using a simple LoadableValue structure:
+Here I demonstrate how to use simple `@State` to make a data loading Model using a simple `LoadableValue` structure:
 ```
 struct LoadableValue<T: Any> {
     enum State {
@@ -55,13 +55,15 @@ Reference-type view-models are needed only when we share data between multiple v
  
  The App "communicates" with UI testing frameworks using `EnvironmentKeys` and `LaunchArguments`
  
- We use the same test for making snapshots and for "replaying" them in the test run. We use EnvironmentKeys and either provide recording file name or snapshot file name.
+ We use the same test for making snapshots and for "replaying" them in the test run. We use `EnvironmentKeys` and either provide recording file name or snapshot file name.
  ```
  enum EnvironmentKeys: String {
     case recordResponseFileName
     case mockResponseFileName
 }
 ```
+
+For this purpose we use two protocols: `InterceptURLProtocol` and `MockURLProtocol`
 
 When we make snapshots then after each test run we "press" home button to indicate that the app needs to save network responses to the file.
 
