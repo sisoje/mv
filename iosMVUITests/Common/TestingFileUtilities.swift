@@ -10,6 +10,7 @@ enum TestingFileUtilities {
     private static func getTestingFilesDirectoryUrl(thisFile: String = #file) -> URL {
         URL(fileURLWithPath: thisFile)
             .deletingLastPathComponent()
+            .deletingLastPathComponent()
             .appendingPathComponent("TestingFiles")
     }
 
