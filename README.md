@@ -1,12 +1,12 @@
 # SwiftUI MV - with unit and UI testing
 
 ## Goals achieved
-- no reference-type view-models just value-type models
-- network "snapshotting" UI tests
+- Avoid reference-type view-models and use value-type models.
+- Implement network "snapshotting" UI tests.
 
-## MV
+## MVVM vs MV
 
-Many tutorials lead you to beleive that MVVM is a way to go in SwiftUI. That is most probably wrong!
+Many tutorials lead you to believe that MVVM is the way to go in SwiftUI. This is most probably incorrect!
 
 Example with a view-model class - MVVM approach:
 ```
@@ -25,7 +25,7 @@ struct JustView: View {
     }
 }
 ```
-Example with a model struct - MV approach:
+Example with a view-model struct - MV approach:
 ```
 struct ModelStruct {
     @Environment(\.colorSource) var colorSource
@@ -42,6 +42,8 @@ extension ModelStruct: View {
 ```
 Like the name suggests, “Model” is the model type. It conforms to View, it is used to render view, but it is NOT View! `@State` allows you to do (state change -> view update) without intermediate objects. A `@State` value type object is always preferable when viable. In this way it is very easy to pass "actions" using `.environment()` 
 
+## Loading data asynchronously
+
 Next I demonstrate how to use simple `@State` to make a data loading Model using a simple `LoadableValue` structure:
 ```
 struct LoadableValue<T: Any> {
@@ -52,6 +54,18 @@ struct LoadableValue<T: Any> {
     var state: State = .idle
     var value: T?
     var error: Error?
+}
+```
+
+Then we simply reflect the state on the UI including progress and error:
+```
+.overlay {
+    if pokemonColors.state.isLoading {
+        ProgressView()
+    }
+}
+.alert(Text("Error"), isPresented: .boolify($pokemonColors.error)) {
+    Button("OK", role: .cancel) {}
 }
 ```
 
@@ -66,16 +80,16 @@ We need to isolate tests from the network calls. We use `URLProtocol` technique.
 The App "communicates" with UI testing framework using `EnvironmentKeys` and `LaunchArguments`
 
 We use the same test for making snapshots and for "replaying" them in the test run. We use `EnvironmentKeys` and either provide recording file name to write responses or snapshot file name to read responses.
- ```
- enum EnvironmentKeys: String {
-    case recordResponseFileName
-    case mockResponseFileName
+```
+enum EnvironmentKeys: String {
+    case recordResponsesFileName
+    case replayResponsesFileName
 }
 ```
 
-When we make snapshots then after each test run we simulate "press" home button to indicate that the app needs to save network responses to the file.
+When we make snapshots, after each test run, we simulate "pressing" the home button to indicate that the app needs to save network responses to the file.
 
-Thats how you get test coverage of about 70% easily without test induced design damage.
+That's how you can achieve test coverage of about 70% easily without causing design damage due to testing.
 
 # Further reading
 

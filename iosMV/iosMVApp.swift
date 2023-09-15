@@ -5,11 +5,11 @@ struct iosMVApp: App {
     @Environment(\.scenePhase) var scenePhase
 
     init() {
-        if let fileName = AppLaunchConfig.environmentDic[.mockResponseFileName] {
+        if let fileName = AppLaunchConfig.environmentDic[.replayResponsesFileName] {
             URLProtocol.registerClass(MockURLProtocol.self)
             try! MockURLProtocol.loadResponses(file: fileName)
         }
-        if AppLaunchConfig.environmentDic[.recordResponseFileName] != nil {
+        if AppLaunchConfig.environmentDic[.recordResponsesFileName] != nil {
             URLProtocol.registerClass(InterceptURLProtocol.self)
         }
         if AppLaunchConfig.argumentSet.contains(.disableAnimations) {
@@ -28,7 +28,7 @@ struct iosMVApp: App {
         .onChange(of: scenePhase) { newPhase in
             if
                 newPhase == .inactive,
-                let fileName = AppLaunchConfig.environmentDic[.recordResponseFileName]
+                let fileName = AppLaunchConfig.environmentDic[.recordResponsesFileName]
             {
                 try! InterceptURLProtocol.saveResponses(file: fileName)
             }

@@ -5,7 +5,7 @@ final class iosMVUITests: BaseMockedTestCase {
         TestUtilities.launchMocked(
             argumentSet: [.disableAnimations],
             environmentDic: [
-                recordRequests ? .recordResponseFileName : .mockResponseFileName: #function
+                recordRequests ? .recordResponsesFileName : .replayResponsesFileName: #function
             ]
         )
         
