@@ -1,6 +1,16 @@
 import SwiftUI
-import SwiftUIMacros
 
 extension EnvironmentValues {
-    @EnvironmentValue var pokemonData: PokemonDataProtocol = PokemonRestApi(urlSession: .shared)
+    struct PokemonDataKey: EnvironmentKey {
+        static let defaultValue: PokemonDataProtocol = PokemonRestApi(urlSession: .shared)
+    }
+
+    var pokemonData: PokemonDataKey.Value {
+        get {
+            self[PokemonDataKey.self]
+        }
+        set {
+            self[PokemonDataKey.self] = newValue
+        }
+    }
 }

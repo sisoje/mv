@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7E1861D12AB5FA7100C1B32C /* TaskOnceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */; };
-		7E49D3F02AB652AD00A76AFE /* SwiftUIMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 7E49D3EF2AB652AD00A76AFE /* SwiftUIMacros */; };
 		7E8158E12AB0745B0007C303 /* PokemonDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */; };
 		7E8158E32AB074BE0007C303 /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E22AB074BE0007C303 /* URLSessionExtensions.swift */; };
 		7E8158E62AB0882B0007C303 /* PokemonPreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E52AB0882B0007C303 /* PokemonPreviewData.swift */; };
@@ -102,7 +101,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E49D3F02AB652AD00A76AFE /* SwiftUIMacros in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,9 +258,6 @@
 			dependencies = (
 			);
 			name = iosMV;
-			packageProductDependencies = (
-				7E49D3EF2AB652AD00A76AFE /* SwiftUIMacros */,
-			);
 			productName = iosMV;
 			productReference = 7EB8EC5D2AAFD575009DF876 /* iosMV.app */;
 			productType = "com.apple.product-type.application";
@@ -335,9 +330,6 @@
 				Base,
 			);
 			mainGroup = 7EB8EC542AAFD575009DF876;
-			packageReferences = (
-				7E49D3EE2AB652AD00A76AFE /* XCRemoteSwiftPackageReference "SwiftUI-Macros" */,
-			);
 			productRefGroup = 7EB8EC5E2AAFD575009DF876 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -727,25 +719,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		7E49D3EE2AB652AD00A76AFE /* XCRemoteSwiftPackageReference "SwiftUI-Macros" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Wouter01/SwiftUI-Macros.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		7E49D3EF2AB652AD00A76AFE /* SwiftUIMacros */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7E49D3EE2AB652AD00A76AFE /* XCRemoteSwiftPackageReference "SwiftUI-Macros" */;
-			productName = SwiftUIMacros;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7EB8EC552AAFD575009DF876 /* Project object */;
 }
