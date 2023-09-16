@@ -1,15 +1,15 @@
 import SwiftUI
 
 struct TaskOnceModifier: ViewModifier {
-    @State private var neverShown = true
+    @State private var wasNeverShown = true
     let asyncFunc: () async -> Void
 
     func body(content: Content) -> some View {
         content.task {
-            guard neverShown else {
+            guard wasNeverShown else {
                 return
             }
-            neverShown = false
+            wasNeverShown = false
             await asyncFunc()
         }
     }
