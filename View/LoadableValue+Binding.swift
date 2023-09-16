@@ -1,6 +1,6 @@
 import SwiftUI
 
-extension Binding {
+@MainActor extension Binding {
     private func doLoad<T: Any>(_ asyncFunc: () async throws -> T) async where Value == LoadableValue<T> {
         do {
             let value = try await asyncFunc()
