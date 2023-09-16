@@ -1,7 +1,7 @@
 import Combine
 
 struct LoadableValue<T: Any> {
-    // TODO add @CaseDetection
+    // TODO: add @CaseDetection
     enum State {
         case idle
         case loading(AnyCancellable?)
@@ -13,19 +13,8 @@ struct LoadableValue<T: Any> {
 }
 
 extension LoadableValue.State {
-    var isLoading: Bool {
-        switch self {
-        case .idle: false
-        default: true
-        }
-    }
-
-    var isIdle: Bool {
-        switch self {
-        case .idle: true
-        default: false
-        }
-    }
+    var isLoading: Bool { !isIdle }
+    var isIdle: Bool { if case .idle = self { true } else { false } }
 }
 
 extension LoadableValue {
