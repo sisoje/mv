@@ -1,14 +1,10 @@
-final class TaskCancellable: Equatable {
-    static func == (lhs: TaskCancellable, rhs: TaskCancellable) -> Bool { lhs === rhs }
-    private let cancelTask: () -> Void
-    init<S, F>(_ task: Task<S, F>) { self.cancelTask = task.cancel }
-    deinit { cancelTask() }
-}
+import Combine
 
 struct LoadableValue<T: Any> {
-    enum State: Equatable {
+    // TODO add @CaseDetection
+    enum State {
         case idle
-        case loading(TaskCancellable?)
+        case loading(AnyCancellable?)
     }
 
     var state: State = .idle
@@ -17,8 +13,19 @@ struct LoadableValue<T: Any> {
 }
 
 extension LoadableValue.State {
-    var isLoading: Bool { self != .idle }
-    var isIdle: Bool { self == .idle }
+    var isLoading: Bool {
+        switch self {
+        case .idle: false
+        default: true
+        }
+    }
+
+    var isIdle: Bool {
+        switch self {
+        case .idle: true
+        default: false
+        }
+    }
 }
 
 extension LoadableValue {

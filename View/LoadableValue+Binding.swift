@@ -23,6 +23,6 @@ import SwiftUI
         let task = Task {
             await doLoad(asyncFunc)
         }
-        wrappedValue.state = .loading(.init(task))
+        wrappedValue.state = .loading(.init(task.cancel))
     }
 }
