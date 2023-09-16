@@ -34,9 +34,7 @@ struct PokemonColorView: View {
     }
 }
 
-struct PokemonColorView_Previews: PreviewProvider {
-    static var previews: some View {
-        PokemonColorView(colorName: "black")
-            .environment(\.pokemonData, PokemonPreviewData())
-    }
+#Preview {
+    PokemonColorView(colorName: "black")
+        .environment(\.pokemonData, PokemonPreviewData())
 }
