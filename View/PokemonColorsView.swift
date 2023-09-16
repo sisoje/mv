@@ -17,7 +17,7 @@ struct PokemonColorsView: View {
             .refreshable {
                 await $pokemonColors.loadAsync(pokemonData.getPokemonColors)
             }
-            .task {
+            .taskOnce {
                 await $pokemonColors.loadAsync(pokemonData.getPokemonColors)
             }
             .overlay {

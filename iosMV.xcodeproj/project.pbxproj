@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E1861D12AB5FA7100C1B32C /* TaskOnceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */; };
 		7E8158E12AB0745B0007C303 /* PokemonDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */; };
 		7E8158E32AB074BE0007C303 /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E22AB074BE0007C303 /* URLSessionExtensions.swift */; };
 		7E8158E62AB0882B0007C303 /* PokemonPreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E52AB0882B0007C303 /* PokemonPreviewData.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOnceModifier.swift; sourceTree = "<group>"; };
 		7E8158DF2AAFDEEC0007C303 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDataProtocol.swift; sourceTree = "<group>"; };
 		7E8158E22AB074BE0007C303 /* URLSessionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtensions.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				7EB8ECB82AAFD6B2009DF876 /* BindingExtensions.swift */,
 				7EB8EC912AAFD5EC009DF876 /* EnvironmentValues+PokemonData.swift */,
 				7EB8EC8B2AAFD5EC009DF876 /* LoadableValue+Binding.swift */,
+				7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */,
 				7EB8EC8D2AAFD5EC009DF876 /* PokemonColorsView.swift */,
 				7EB8EC8C2AAFD5EC009DF876 /* PokemonColorView.swift */,
 			);
@@ -381,6 +384,7 @@
 				7EB8ECAD2AAFD64F009DF876 /* CodableHttp.swift in Sources */,
 				7EB8EC992AAFD5ED009DF876 /* EnvironmentValues+PokemonData.swift in Sources */,
 				7EB8EC962AAFD5ED009DF876 /* PokemonColorsView.swift in Sources */,
+				7E1861D12AB5FA7100C1B32C /* TaskOnceModifier.swift in Sources */,
 				7EB8EC982AAFD5ED009DF876 /* PokemonRestApi.swift in Sources */,
 				7EB8ECA52AAFD64F009DF876 /* TestingFileUtilities.swift in Sources */,
 				7EB8EC612AAFD575009DF876 /* iosMVApp.swift in Sources */,

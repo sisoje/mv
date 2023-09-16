@@ -17,7 +17,7 @@ struct PokemonColorView: View {
                 try await pokemonData.getPokemonColor(colorName: colorName)
             }
         }
-        .task {
+        .taskOnce {
             await $pokemonColor.loadAsync {
                 try await pokemonData.getPokemonColor(colorName: colorName)
             }
