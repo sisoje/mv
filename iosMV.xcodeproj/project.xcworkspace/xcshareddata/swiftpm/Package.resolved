@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "74203046135342e4a4a627476dd6caf8b28fe11b",
+        "version" : "509.0.0"
+      }
+    },
+    {
+      "identity" : "swiftui-macros",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Wouter01/SwiftUI-Macros.git",
+      "state" : {
+        "revision" : "544bbdac002afaf0b5daa24e1b4ddec1205e4c24",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 2
+}
