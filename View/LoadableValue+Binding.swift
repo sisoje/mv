@@ -1,10 +1,12 @@
 import SwiftUI
 
 @MainActor extension Binding {
-    private func doLoad<T: Any>(_ asyncFunc: () async throws -> T) async where Value == LoadableValue<T> {
+    private func doLoad<T>(_ asyncFunc: @Sendable () async throws -> T) async where Value == LoadableValue<T> {
+        wrappedValue.state = .loading
         do {
             let value = try await asyncFunc()
             wrappedValue.state = .idle
+            wrappedValue.error = nil
             withAnimation {
                 wrappedValue.value = value
             }
@@ -14,15 +16,13 @@ import SwiftUI
         }
     }
 
-    func loadAsync<T: Any>(_ asyncFunc: () async throws -> T) async where Value == LoadableValue<T> {
-        wrappedValue.state = .loading(nil)
+    func loadAsync<T>(_ asyncFunc: @Sendable () async throws -> T) async where Value == LoadableValue<T> {
         await doLoad(asyncFunc)
     }
 
-    func loadSync<T: Any>(_ asyncFunc: @escaping () async throws -> T) where Value == LoadableValue<T> {
-        let task = Task {
+    func loadSync<T>(_ asyncFunc: @Sendable @escaping () async throws -> T) -> Task<Void, Never> where Value == LoadableValue<T> {
+        Task {
             await doLoad(asyncFunc)
         }
-        wrappedValue.state = .loading(.init(task.cancel))
     }
 }
