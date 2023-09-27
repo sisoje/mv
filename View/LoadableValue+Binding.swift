@@ -20,7 +20,7 @@ import SwiftUI
         await doLoad(asyncFunc)
     }
 
-    func loadSync<T>(_ asyncFunc: @Sendable @escaping () async throws -> T) -> Task<Void, Never> where Value == LoadableValue<T> {
+    func loadTask<T>(_ asyncFunc: @MainActor @escaping @Sendable () async throws -> T) -> Task<Void, Never> where Value == LoadableValue<T> {
         Task {
             await doLoad(asyncFunc)
         }

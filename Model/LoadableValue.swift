@@ -1,4 +1,4 @@
-struct LoadableValue<T: Any & Sendable> {
+struct LoadableValue<T: Any & Sendable>: Sendable {
     enum State {
         case idle
         case loading
