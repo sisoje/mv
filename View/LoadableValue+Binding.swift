@@ -1,7 +1,7 @@
 import SwiftUI
 
-@MainActor extension Binding {
-    private func doLoad<T>(_ asyncFunc: @Sendable () async throws -> T) async where Value == LoadableValue<T> {
+extension Binding {
+    private func doLoad<T: Sendable>(_ asyncFunc: @Sendable () async throws -> T) async where Value == LoadableValue<T> {
         wrappedValue.state = .loading
         do {
             let value = try await asyncFunc()
@@ -16,11 +16,11 @@ import SwiftUI
         }
     }
 
-    func loadAsync<T>(_ asyncFunc: @Sendable () async throws -> T) async where Value == LoadableValue<T> {
+    func loadAsync<T: Sendable>(_ asyncFunc: @MainActor @Sendable () async throws -> T) async where Value == LoadableValue<T> {
         await doLoad(asyncFunc)
     }
 
-    func loadTask<T>(_ asyncFunc: @MainActor @escaping @Sendable () async throws -> T) -> Task<Void, Never> where Value == LoadableValue<T> {
+    @MainActor func loadTask<T: Sendable>(_ asyncFunc: @escaping @Sendable () async throws -> T) -> Task<Void, Never> where Value == LoadableValue<T> {
         Task {
             await doLoad(asyncFunc)
         }

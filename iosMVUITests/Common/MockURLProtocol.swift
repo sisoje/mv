@@ -1,7 +1,7 @@
 import Foundation
 import OSLog
 
-final class MockURLProtocol: URLProtocol {
+@MainActor final class MockURLProtocol: URLProtocol {
     private static var codableResponses: [CodableRequestAndReponse] = []
     
     private static var requests: [URLRequest] = [] {

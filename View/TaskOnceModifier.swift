@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TaskOnceModifier: ViewModifier {
     @State private var wasNeverShown = true
-    let asyncFunc: () async -> Void
+    let asyncFunc: @Sendable () async -> Void
 
     func body(content: Content) -> some View {
         content.task {
@@ -16,7 +16,7 @@ struct TaskOnceModifier: ViewModifier {
 }
 
 extension View {
-    func taskOnce(asyncFunc: @escaping () async -> Void) -> some View {
+    func taskOnce(priority: TaskPriority = .userInitiated, _ asyncFunc: @MainActor  @escaping @Sendable () async -> Void) -> some View {
         modifier(TaskOnceModifier(asyncFunc: asyncFunc))
     }
 }

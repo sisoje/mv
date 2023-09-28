@@ -1,7 +1,7 @@
 import Foundation
 import OSLog
 
-final class InterceptURLProtocol: URLProtocol {
+@MainActor final class InterceptURLProtocol: URLProtocol {
     private static let interceptHeader = "X-Intercepted-By"
     
     private static var requests: [URLRequest] = [] {
@@ -32,24 +32,26 @@ final class InterceptURLProtocol: URLProtocol {
     override class func canonicalRequest(for request: URLRequest) -> URLRequest { request }
     
     override func stopLoading() {}
-
+    
     override func startLoading() {
         let index = Self.requests.count
         Self.requests.append(request)
         var interceptRequest = request
         interceptRequest.setValue(String(describing: self), forHTTPHeaderField: Self.interceptHeader)
-        let task = URLSession.shared.dataTask(with: interceptRequest) { [client] data, response, error in
-            Self.responses[index] = (data, response, error)
+        let task = URLSession.shared.dataTask(with: interceptRequest) { data, response, error in
+            DispatchQueue.main.async {
+                Self.responses[index] = (data, response, error)
+            }
             if let error = error {
-                client?.urlProtocol(self, didFailWithError: error)
+                self.client?.urlProtocol(self, didFailWithError: error)
             }
             if let data = data {
-                client?.urlProtocol(self, didLoad: data)
+                self.client?.urlProtocol(self, didLoad: data)
             }
             if let response = response {
-                client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+                self.client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
             }
-            client?.urlProtocolDidFinishLoading(self)
+            self.client?.urlProtocolDidFinishLoading(self)
         }
         task.resume()
     }
