@@ -3,7 +3,7 @@ import SwiftUI
 struct PokemonColorView: View {
     let colorName: String
     @Environment(\.pokemonData) private var pokemonData
-    @State private var pokemonColor: LoadableValue<PokemonColorResponse> = .init()
+    @Loadable<PokemonColorResponse> private var pokemonColor
 
     var body: some View {
         List {
