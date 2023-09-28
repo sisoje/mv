@@ -16,7 +16,7 @@ struct TaskOnceModifier: ViewModifier {
 }
 
 extension View {
-    func taskOnce(priority: TaskPriority = .userInitiated, _ asyncFunc: @MainActor  @escaping @Sendable () async -> Void) -> some View {
+    func taskOnce(priority: TaskPriority = .userInitiated, _ asyncFunc: @MainActor @escaping @Sendable () async -> Void) -> some View {
         modifier(TaskOnceModifier(asyncFunc: asyncFunc))
     }
 }
