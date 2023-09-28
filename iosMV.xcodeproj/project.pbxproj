@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		44B924E22AC6296800FF118B /* LoadablePropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B924E12AC6296800FF118B /* LoadablePropertyWrapper.swift */; };
+		44B924E42AC62B9A00FF118B /* TaskHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B924E32AC62B9A00FF118B /* TaskHandling.swift */; };
 		7E1861D12AB5FA7100C1B32C /* TaskOnceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */; };
 		7E8158E12AB0745B0007C303 /* PokemonDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */; };
 		7E8158E32AB074BE0007C303 /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E22AB074BE0007C303 /* URLSessionExtensions.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		44B924E12AC6296800FF118B /* LoadablePropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadablePropertyWrapper.swift; sourceTree = "<group>"; };
+		44B924E32AC62B9A00FF118B /* TaskHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskHandling.swift; sourceTree = "<group>"; };
 		7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOnceModifier.swift; sourceTree = "<group>"; };
 		7E8158DF2AAFDEEC0007C303 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDataProtocol.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				44B924E12AC6296800FF118B /* LoadablePropertyWrapper.swift */,
 				7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */,
 				7EB8EC8D2AAFD5EC009DF876 /* PokemonColorsView.swift */,
+				44B924E32AC62B9A00FF118B /* TaskHandling.swift */,
 				7EB8EC8C2AAFD5EC009DF876 /* PokemonColorView.swift */,
 			);
 			path = View;
@@ -375,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44B924E42AC62B9A00FF118B /* TaskHandling.swift in Sources */,
 				7EB8ECAF2AAFD64F009DF876 /* InterceptURLProtocol.swift in Sources */,
 				7EB8ECB32AAFD64F009DF876 /* LaunchArguments.swift in Sources */,
 				7EB8EC952AAFD5ED009DF876 /* PokemonColorView.swift in Sources */,
