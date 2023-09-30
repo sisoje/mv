@@ -15,11 +15,11 @@ extension Binding {
         }
     }
 
-    func loadAsync<T: Sendable>(_ asyncFunc: @MainActor @Sendable () async throws -> T) async where Value == LoadableValue<T> {
+    func loadAsync<T>(_ asyncFunc: @MainActor @Sendable () async throws -> T) async where Value == LoadableValue<T> {
         await doLoad(asyncFunc)
     }
 
-    @MainActor func loadTask<T: Sendable>(_ asyncFunc: @MainActor @escaping @Sendable () async throws -> T) -> Task<Void, Never> where Value == LoadableValue<T> {
+    @MainActor func loadTask<T>(_ asyncFunc: @MainActor @escaping @Sendable () async throws -> T) -> Task<Void, Never> where Value == LoadableValue<T> {
         Task {
             await doLoad(asyncFunc)
         }
