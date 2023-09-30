@@ -13,6 +13,7 @@ import SwiftUI
         }
         catch is CancellationError {}
         catch {
+            guard !Task.isCancelled else { return }
             wrappedValue.state = .idle
             wrappedValue.error = error
         }
