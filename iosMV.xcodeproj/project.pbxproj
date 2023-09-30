@@ -196,7 +196,6 @@
 				7EB8EC8B2AAFD5EC009DF876 /* LoadableValue+Binding.swift */,
 				7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */,
 				7EB8EC8D2AAFD5EC009DF876 /* PokemonColorsView.swift */,
-				44B924E32AC62B9A00FF118B /* TaskCancellationBag.swift */,
 				7EB8EC8C2AAFD5EC009DF876 /* PokemonColorView.swift */,
 			);
 			path = View;
@@ -217,6 +216,7 @@
 				7EB8EC932AAFD5ED009DF876 /* LoadableValue.swift */,
 				7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */,
 				7EB8EC8F2AAFD5EC009DF876 /* Pokemons.swift */,
+				44B924E32AC62B9A00FF118B /* TaskCancellationBag.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
