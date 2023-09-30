@@ -10,7 +10,8 @@ struct PokemonRestApi {
     let urlSession: URLSession
 
     func loadDecodable<T: Decodable>(_ request: URLRequest) async throws -> T {
-        try await JSONDecoder().decode(T.self, from: urlSession.loadData(request))
+        try await Task.sleep(for: .seconds(1))
+        return try await JSONDecoder().decode(T.self, from: urlSession.loadData(request))
     }
 }
 

@@ -6,12 +6,19 @@ struct PokemonColorsView: View {
 
     var body: some View {
         NavigationView {
-            List(pokemonColors.value?.results ?? [], id: \.name) { pokemonColor in
-                NavigationLink {
-                    PokemonColorView(colorName: pokemonColor.name)
-                } label: {
-                    Text(pokemonColor.name)
-                        .accessibilityIdentifier(pokemonColor.name)
+            VStack {
+                Button("Reload") {
+                    _ = $pokemonColors.loadTask {
+                        try await pokemonData.getPokemonColors()
+                    }
+                }
+                List(pokemonColors.value?.results ?? [], id: \.name) { pokemonColor in
+                    NavigationLink {
+                        PokemonColorView(colorName: pokemonColor.name)
+                    } label: {
+                        Text(pokemonColor.name)
+                            .accessibilityIdentifier(pokemonColor.name)
+                    }
                 }
             }
             .refreshable {

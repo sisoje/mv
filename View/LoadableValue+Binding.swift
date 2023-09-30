@@ -19,7 +19,7 @@ extension Binding {
         await doLoad(asyncFunc)
     }
 
-    @MainActor func loadTask<T: Sendable>(_ asyncFunc: @escaping @Sendable () async throws -> T) -> Task<Void, Never> where Value == LoadableValue<T> {
+    @MainActor func loadTask<T: Sendable>(_ asyncFunc: @MainActor @escaping @Sendable () async throws -> T) -> Task<Void, Never> where Value == LoadableValue<T> {
         Task {
             await doLoad(asyncFunc)
         }
