@@ -8,9 +8,9 @@ struct PokemonColorsView: View {
         NavigationView {
             VStack {
                 Button("Reload") {
-                    _ = $pokemonColors.loadTask {
+                    $pokemonColors.loadTask {
                         try await pokemonData.getPokemonColors()
-                    }
+                    }.ignoreCancellation()
                 }
                 List(pokemonColors.value?.results ?? [], id: \.name) { pokemonColor in
                     NavigationLink {

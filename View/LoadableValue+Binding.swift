@@ -1,27 +1,33 @@
 import SwiftUI
 
-extension Binding {
-    private func doLoad<T>(_ asyncFunc: @Sendable () async throws -> T) async where Value == LoadableValue<T> {
-        wrappedValue.state = .loading
+@MainActor extension Binding {
+    private func loadInternal<T>(_ asyncFunc: @MainActor @Sendable () async throws -> T) async where Value == LoadableValue<T> {
         do {
             let value = try await asyncFunc()
-            wrappedValue.state = .idle
             withAnimation {
                 wrappedValue.value = value
+                wrappedValue.state = .idle
             }
-        } catch {
-            wrappedValue.state = .idle
-            wrappedValue.error = error
+        }
+        catch is CancellationError {}
+        catch {
+            withAnimation {
+                wrappedValue.error = error
+                wrappedValue.state = .idle
+            }
         }
     }
 
     func loadAsync<T>(_ asyncFunc: @MainActor @Sendable () async throws -> T) async where Value == LoadableValue<T> {
-        await doLoad(asyncFunc)
+        wrappedValue.state = .loading(nil)
+        await loadInternal(asyncFunc)
     }
 
-    @MainActor func loadTask<T>(_ asyncFunc: @MainActor @escaping @Sendable () async throws -> T) -> Task<Void, Never> where Value == LoadableValue<T> {
-        Task {
-            await doLoad(asyncFunc)
+    func loadTask<T>(_ asyncFunc: @MainActor @escaping @Sendable () async throws -> T) -> Task<Void, Never> where Value == LoadableValue<T> {
+        let task = Task {
+            await loadInternal(asyncFunc)
         }
+        wrappedValue.state = .loading(.taskCancelation(task))
+        return task
     }
 }
