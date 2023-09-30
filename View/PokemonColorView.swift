@@ -3,8 +3,8 @@ import SwiftUI
 struct PokemonColorView: View {
     let colorName: String
     @Environment(\.pokemonData) private var pokemonData
-    @Loadable<PokemonColorResponse> private var pokemonColor
-
+    @State private var pokemonColor: LoadableValue<PokemonColorResponse> = .init()
+    
     var body: some View {
         List {
             ForEach(pokemonColor.value?.pokemonSpecies ?? [], id: \.name) { specie in

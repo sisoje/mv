@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PokemonColorsView: View {
     @Environment(\.pokemonData) private var pokemonData
-    @Loadable<PokemonColorsResponse> private var pokemonColors
+    @State private var pokemonColors: LoadableValue<PokemonColorsResponse> = .init()
 
     var body: some View {
         NavigationView {

@@ -1,4 +1,4 @@
-struct LoadableValue<T> {
+struct LoadableValue<T: Any & Sendable>: Sendable {
     enum State {
         case idle
         case loading
@@ -19,4 +19,3 @@ extension LoadableValue {
     var hasValue: Bool { value != nil }
 }
 
-extension LoadableValue: Sendable where T: Sendable {}
