@@ -7,6 +7,7 @@ import SwiftUI
         }
         do {
             let value = try await asyncFunc()
+            try Task.checkCancellation()
             withAnimation {
                 wrappedValue.value = value
                 wrappedValue.state = .idle
