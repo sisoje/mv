@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4436BE682ACB16E600D56036 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436BE672ACB16E600D56036 /* RequestBuilder.swift */; };
 		44B924E42AC62B9A00FF118B /* TaskCancellationBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B924E32AC62B9A00FF118B /* TaskCancellationBag.swift */; };
 		7E1861D12AB5FA7100C1B32C /* TaskOnceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */; };
 		7E8158E12AB0745B0007C303 /* PokemonDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4436BE672ACB16E600D56036 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		44B924E32AC62B9A00FF118B /* TaskCancellationBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCancellationBag.swift; sourceTree = "<group>"; };
 		7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOnceModifier.swift; sourceTree = "<group>"; };
 		7E8158DF2AAFDEEC0007C303 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				7EB8EC902AAFD5EC009DF876 /* PokemonRestApi.swift */,
+				4436BE672ACB16E600D56036 /* RequestBuilder.swift */,
 				7E8158E22AB074BE0007C303 /* URLSessionExtensions.swift */,
 			);
 			path = Networking;
@@ -390,6 +393,7 @@
 				7EB8EC962AAFD5ED009DF876 /* PokemonColorsView.swift in Sources */,
 				7E1861D12AB5FA7100C1B32C /* TaskOnceModifier.swift in Sources */,
 				7EB8EC982AAFD5ED009DF876 /* PokemonRestApi.swift in Sources */,
+				4436BE682ACB16E600D56036 /* RequestBuilder.swift in Sources */,
 				7EB8ECA52AAFD64F009DF876 /* TestingFileUtilities.swift in Sources */,
 				7EB8EC612AAFD575009DF876 /* iosMVApp.swift in Sources */,
 				7EB8ECA92AAFD64F009DF876 /* EnvironmentKeys.swift in Sources */,

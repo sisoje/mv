@@ -22,4 +22,22 @@ final class iosMVTests: XCTestCase {
         XCTAssertTrue(Env.isUnitTesting)
         XCTAssertFalse(Env.isPreviews)
     }
+
+    func testBuilder() {
+        struct urlenc: DictionarySerializable {
+            let x: String = "y"
+            let c: Int = 1
+            let b: Bool = true
+            let s: String? = ""
+        }
+        let url = URL(string: "https://google.com")!
+        let request = url.get("/") {
+            Query(["x": "y"])
+            Headers(["x": "y"])
+            URLEncodedData(urlenc())
+            AcceptJson()
+            AcceptGzipDeflate()
+        }
+        XCTAssertEqual(request.url?.absoluteString, "")
+    }
 }

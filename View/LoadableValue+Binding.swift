@@ -2,11 +2,11 @@ import SwiftUI
 
 @MainActor extension Binding {
     func loadAsync<T>(_ asyncFunc: @MainActor @Sendable () async throws -> T) async where Value == LoadableValue<T> {
-        wrappedValue.state = .loading
+        wrappedValue.isLoading = true
         do {
             let value = try await asyncFunc()
             try Task.checkCancellation()
-            wrappedValue.state = .idle
+            wrappedValue.isLoading = false
             withAnimation {
                 wrappedValue.value = value
             }
@@ -14,7 +14,7 @@ import SwiftUI
         catch is CancellationError {}
         catch {
             guard !Task.isCancelled else { return }
-            wrappedValue.state = .idle
+            wrappedValue.isLoading = false
             wrappedValue.error = error
         }
     }

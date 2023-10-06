@@ -27,7 +27,7 @@ struct PokemonColorView: View {
         }
         .navigationTitle("Species")
         .overlay {
-            if pokemonColor.state.isLoading {
+            if pokemonColor.isLoading {
                 ProgressView()
             }
         }

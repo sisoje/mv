@@ -32,7 +32,7 @@ struct PokemonColorsView: View {
                 }
             }
             .overlay {
-                if pokemonColors.state.isLoading {
+                if pokemonColors.isLoading {
                     ProgressView()
                 }
             }
