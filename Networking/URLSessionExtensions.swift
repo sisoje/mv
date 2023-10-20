@@ -1,5 +1,11 @@
 import Foundation
 
+struct BadResponseError: Error {
+    let request: URLRequest
+    let response: URLResponse
+    let data: Data
+}
+
 extension URLSession {
     func loadData(_ request: URLRequest) async throws -> Data {
         let (data, response) = try await data(for: request)

@@ -25,9 +25,9 @@ struct iosMVApp: App {
                 PokemonColorsView()
             }
         }
-        .onChange(of: scenePhase) { newPhase in
+        .onChange(of: scenePhase) {
             if
-                newPhase == .inactive,
+                scenePhase == .inactive,
                 let fileName = AppLaunchConfig.environmentDic[.recordResponsesFileName]
             {
                 try! InterceptURLProtocol.saveResponses(file: fileName)

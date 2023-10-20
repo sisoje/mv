@@ -1,11 +1,5 @@
 import Foundation
 
-struct BadResponseError: Error {
-    let request: URLRequest
-    let response: URLResponse
-    let data: Data
-}
-
 struct PokemonRestApi {
     let urlSession: URLSession
 
