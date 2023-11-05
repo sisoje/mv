@@ -46,6 +46,7 @@
 		7ED789C02AF7225700AB3E34 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 7ED789BF2AF7225700AB3E34 /* ViewInspector */; };
 		7ED789C22AF7B7BA00AB3E34 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED789C12AF7B7BA00AB3E34 /* TimerView.swift */; };
 		7ED789C42AF7B82200AB3E34 /* TimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED789C32AF7B82200AB3E34 /* TimerWrapper.swift */; };
+		7ED789C72AF7C47600AB3E34 /* PokemonColorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED789C62AF7C47600AB3E34 /* PokemonColorsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		7EB8ECBF2AAFD719009DF876 /* iosMVUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iosMVUITests.swift; sourceTree = "<group>"; };
 		7ED789C12AF7B7BA00AB3E34 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		7ED789C32AF7B82200AB3E34 /* TimerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWrapper.swift; sourceTree = "<group>"; };
+		7ED789C62AF7C47600AB3E34 /* PokemonColorsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonColorsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				7E8158E42AB083740007C303 /* iosMV.xctestplan */,
 				7E8158DF2AAFDEEC0007C303 /* README.md */,
 				7EB8EC8E2AAFD5EC009DF876 /* Networking */,
+				7ED789C52AF7C45400AB3E34 /* ViewModels */,
 				7EB8EC922AAFD5ED009DF876 /* Model */,
 				7EB8EC8A2AAFD5EC009DF876 /* View */,
 				7EB8EC5F2AAFD575009DF876 /* iosMV */,
@@ -227,7 +230,6 @@
 				7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */,
 				7EB8EC8F2AAFD5EC009DF876 /* Pokemons.swift */,
 				44B924E32AC62B9A00FF118B /* TaskCancellationBag.swift */,
-				7ED789C32AF7B82200AB3E34 /* TimerWrapper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,6 +256,15 @@
 				7EB8ECBE2AAFD719009DF876 /* TestUtilities.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		7ED789C52AF7C45400AB3E34 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7ED789C32AF7B82200AB3E34 /* TimerWrapper.swift */,
+				7ED789C62AF7C47600AB3E34 /* PokemonColorsViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +423,7 @@
 				4436BE682ACB16E600D56036 /* RequestBuilder.swift in Sources */,
 				7EB8ECA52AAFD64F009DF876 /* TestingFileUtilities.swift in Sources */,
 				7EB8EC612AAFD575009DF876 /* iosMVApp.swift in Sources */,
+				7ED789C72AF7C47600AB3E34 /* PokemonColorsViewModel.swift in Sources */,
 				7EB8ECA92AAFD64F009DF876 /* EnvironmentKeys.swift in Sources */,
 				7E8158E62AB0882B0007C303 /* PokemonPreviewData.swift in Sources */,
 				7EB8EC9A2AAFD5ED009DF876 /* LoadableValue.swift in Sources */,

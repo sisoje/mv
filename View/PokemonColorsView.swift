@@ -1,17 +1,14 @@
 import SwiftUI
 
 struct PokemonColorsView: View {
-    @Environment(\.pokemonData) private var pokemonData
-    @State private var pokemonColors: LoadableValue<PokemonColorsResponse> = .init()
+    @PokemonColorsViewModel var pokemonColors
 
     var body: some View {
         NavigationView {
             VStack {
                 TimerView()
                 Button("Reload") {
-                    $pokemonColors.loadTask {
-                        try await pokemonData.getPokemonColors()
-                    }.ignoreCancellation()
+                    _pokemonColors.load()
                 }
                 List(pokemonColors.value?.results ?? [], id: \.name) { pokemonColor in
                     NavigationLink {
@@ -23,21 +20,17 @@ struct PokemonColorsView: View {
                 }
             }
             .refreshable {
-                await $pokemonColors.loadAsync {
-                    try await pokemonData.getPokemonColors()
-                }
+                await _pokemonColors.loadAsync()
             }
             .taskOnce {
-                await $pokemonColors.loadAsync {
-                    try await pokemonData.getPokemonColors()
-                }
+                await _pokemonColors.loadAsync()
             }
             .overlay {
                 if pokemonColors.isLoading {
                     ProgressView()
                 }
             }
-            .alert(Text("Error"), isPresented: .boolify($pokemonColors.error)) {
+            .alert(Text("Error"), isPresented: .boolify(_pokemonColors.errorBinding)) {
                 Button("OK", role: .cancel) {}
             }
             .navigationTitle("Colors")
