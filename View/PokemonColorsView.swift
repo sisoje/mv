@@ -7,6 +7,7 @@ struct PokemonColorsView: View {
     var body: some View {
         NavigationView {
             VStack {
+                TimerView()
                 Button("Reload") {
                     $pokemonColors.loadTask {
                         try await pokemonData.getPokemonColors()
@@ -47,4 +48,5 @@ struct PokemonColorsView: View {
 #Preview {
     PokemonColorsView()
         .environment(\.pokemonData, PokemonPreviewData())
+        .environment(\.timerScheduler) { _, _ in {} }
 }

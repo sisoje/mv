@@ -1,5 +1,6 @@
 @testable import iosMV
 import SwiftUI
+import ViewInspector
 import XCTest
 
 final class iosMVTests: XCTestCase {
@@ -23,21 +24,37 @@ final class iosMVTests: XCTestCase {
         XCTAssertFalse(Env.isPreviews)
     }
 
-    func testBuilder() {
-        struct urlenc: DictionarySerializable {
-            let x: String = "y"
-            let c: Int = 1
-            let b: Bool = true
-            let s: String? = ""
+    @MainActor func testTimer() throws {
+        struct DummyView: View {
+            @TimerWrapper(interval: 1, limit: 3) public var timeCounter
+            var rawWrapper: TimerWrapper { _timeCounter }
+            var didAppear: ((Self) -> Void)? // framework requriment
+            var body: some View { EmptyView().onAppear { didAppear?(self) } }
         }
-        let url = URL(string: "https://google.com")!
-        let request = url.get("/") {
-            Query(["x": "y"])
-            Headers(["x": "y"])
-            URLEncodedData(urlenc())
-            AcceptJson()
-            AcceptGzipDeflate()
+
+        var sut = DummyView()
+
+        let exp1 = sut.on(\.didAppear) { view in
+            XCTAssertEqual(try view.actualView().timeCounter, 0)
+            try view.actualView().rawWrapper.start()
+            XCTAssertEqual(try view.actualView().timeCounter, 1)
         }
-        XCTAssertEqual(request.url?.absoluteString, "")
+
+        let exp2 = expectation(description: "timer started")
+        let exp3 = expectation(description: "timer stopped")
+
+        let viewWithEnvironment = sut.environment(\.timerScheduler) { _, block in
+            exp2.fulfill()
+            block()
+            return {
+                exp3.fulfill()
+            }
+        }
+
+        autoreleasepool {
+            ViewHosting.host(view: viewWithEnvironment)
+        }
+
+        wait(for: [exp1, exp2, exp3], timeout: 0.1)
     }
 }

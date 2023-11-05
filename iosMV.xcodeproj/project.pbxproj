@@ -43,6 +43,9 @@
 		7EB8ECC02AAFD719009DF876 /* BaseUiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8ECBD2AAFD719009DF876 /* BaseUiTest.swift */; };
 		7EB8ECC12AAFD719009DF876 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8ECBE2AAFD719009DF876 /* TestUtilities.swift */; };
 		7EB8ECC22AAFD719009DF876 /* iosMVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8ECBF2AAFD719009DF876 /* iosMVUITests.swift */; };
+		7ED789C02AF7225700AB3E34 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 7ED789BF2AF7225700AB3E34 /* ViewInspector */; };
+		7ED789C22AF7B7BA00AB3E34 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED789C12AF7B7BA00AB3E34 /* TimerView.swift */; };
+		7ED789C42AF7B82200AB3E34 /* TimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED789C32AF7B82200AB3E34 /* TimerWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,8 @@
 		7EB8ECBD2AAFD719009DF876 /* BaseUiTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUiTest.swift; sourceTree = "<group>"; };
 		7EB8ECBE2AAFD719009DF876 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
 		7EB8ECBF2AAFD719009DF876 /* iosMVUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iosMVUITests.swift; sourceTree = "<group>"; };
+		7ED789C12AF7B7BA00AB3E34 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		7ED789C32AF7B82200AB3E34 /* TimerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ED789C02AF7225700AB3E34 /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +204,7 @@
 				7EB8EC8B2AAFD5EC009DF876 /* LoadableValue+Binding.swift */,
 				7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */,
 				7EB8EC8D2AAFD5EC009DF876 /* PokemonColorsView.swift */,
+				7ED789C12AF7B7BA00AB3E34 /* TimerView.swift */,
 				7EB8EC8C2AAFD5EC009DF876 /* PokemonColorView.swift */,
 			);
 			path = View;
@@ -220,6 +227,7 @@
 				7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */,
 				7EB8EC8F2AAFD5EC009DF876 /* Pokemons.swift */,
 				44B924E32AC62B9A00FF118B /* TaskCancellationBag.swift */,
+				7ED789C32AF7B82200AB3E34 /* TimerWrapper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +290,9 @@
 				7EB8EC6F2AAFD578009DF876 /* PBXTargetDependency */,
 			);
 			name = iosMVTests;
+			packageProductDependencies = (
+				7ED789BF2AF7225700AB3E34 /* ViewInspector */,
+			);
 			productName = iosMVTests;
 			productReference = 7EB8EC6D2AAFD577009DF876 /* iosMVTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -336,6 +347,9 @@
 				Base,
 			);
 			mainGroup = 7EB8EC542AAFD575009DF876;
+			packageReferences = (
+				7ED789BE2AF7225700AB3E34 /* XCRemoteSwiftPackageReference "ViewInspector" */,
+			);
 			productRefGroup = 7EB8EC5E2AAFD575009DF876 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -384,6 +398,8 @@
 				7EB8EC952AAFD5ED009DF876 /* PokemonColorView.swift in Sources */,
 				7E8158E32AB074BE0007C303 /* URLSessionExtensions.swift in Sources */,
 				7EB8ECBB2AAFD6B2009DF876 /* Env.swift in Sources */,
+				7ED789C42AF7B82200AB3E34 /* TimerWrapper.swift in Sources */,
+				7ED789C22AF7B7BA00AB3E34 /* TimerView.swift in Sources */,
 				7EB8ECB12AAFD64F009DF876 /* AppLaunchConfig.swift in Sources */,
 				7E8158E12AB0745B0007C303 /* PokemonDataProtocol.swift in Sources */,
 				7EB8EC972AAFD5ED009DF876 /* Pokemons.swift in Sources */,
@@ -625,7 +641,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lazar.mv.iosMVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -644,7 +660,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lazar.mv.iosMVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -729,6 +745,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7ED789BE2AF7225700AB3E34 /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7ED789BF2AF7225700AB3E34 /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7ED789BE2AF7225700AB3E34 /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7EB8EC552AAFD575009DF876 /* Project object */;
 }
