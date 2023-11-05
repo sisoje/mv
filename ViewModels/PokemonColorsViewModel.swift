@@ -6,17 +6,19 @@
 //
 
 import SwiftUI
+import Combine
 
 @propertyWrapper @MainActor struct PokemonColorsViewModel: DynamicProperty {
     @Environment(\.pokemonData) private var pokemonData
     @State var pokemonColors: LoadableValue<PokemonColorsResponse> = .init()
+    @State private var cancellable: AnyCancellable?
 
     var wrappedValue: LoadableValue<PokemonColorsResponse> { pokemonColors }
 
     func load() {
-        $pokemonColors.loadTask {
+        cancellable = $pokemonColors.loadTask {
             try await pokemonData.getPokemonColors()
-        }.ignoreCancellation()
+        }.cancellable()
     }
 
     func loadAsync() async {
