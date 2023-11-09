@@ -2,15 +2,16 @@ import SwiftUI
 
 struct PokemonColorsView: View {
     @PokemonColorsViewModel var viewModel
-
     var body: some View {
         NavigationView {
             VStack {
+                AgeView()
                 TimerView()
                 Button("Reload") {
-                    _viewModel.load()
+                    viewModel.load()
                 }
-                List(viewModel.value?.results ?? [], id: \.name) { pokemonColor in
+                .disabled(viewModel.pokemonColors.isLoading)
+                List(viewModel.pokemonColors.value?.results ?? [], id: \.name) { pokemonColor in
                     NavigationLink {
                         PokemonColorView(colorName: pokemonColor.name)
                     } label: {
@@ -20,17 +21,17 @@ struct PokemonColorsView: View {
                 }
             }
             .refreshable {
-                await _viewModel.loadAsync()
+                await viewModel.loadAsync()
             }
             .taskOnce {
-                await _viewModel.loadAsync()
+                await viewModel.loadAsync()
             }
             .overlay {
-                if viewModel.isLoading {
+                if viewModel.pokemonColors.isLoading {
                     ProgressView()
                 }
             }
-            .alert(Text("Error"), isPresented: .boolify(_viewModel.$pokemonColors.error)) {
+            .alert(Text("Error"), isPresented: .boolify(viewModel.$pokemonColors.error)) {
                 Button("OK", role: .cancel) {}
             }
             .navigationTitle("Colors")

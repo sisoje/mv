@@ -1,12 +1,30 @@
 {
   "pins" : [
     {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "6ad4ea24b01559dde0773e3d091f1b9e36175036",
+        "version" : "509.0.2"
+      }
+    },
+    {
       "identity" : "viewinspector",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nalexn/ViewInspector.git",
       "state" : {
         "revision" : "07c090d73e0169c342a4ed46e9010be2781eca1e",
         "version" : "0.9.8"
+      }
+    },
+    {
+      "identity" : "viewmodelify-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sisoje/viewmodelify-swift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "45a2b91190f65c6006812c2c39e9e0a7c68ff9bc"
       }
     }
   ],

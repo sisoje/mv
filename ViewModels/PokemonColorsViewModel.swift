@@ -5,15 +5,15 @@
 //  Created by Lazar Otasevic on 5.11.23..
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
+import ViewModelify
 
+@ViewModelify
 @propertyWrapper @MainActor struct PokemonColorsViewModel: DynamicProperty {
     @Environment(\.pokemonData) private var pokemonData
     @State var pokemonColors: LoadableValue<PokemonColorsResponse> = .init()
     @State private var cancellable: AnyCancellable?
-
-    var wrappedValue: LoadableValue<PokemonColorsResponse> { pokemonColors }
 
     func load() {
         cancellable = $pokemonColors.loadTask {

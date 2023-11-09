@@ -10,6 +10,8 @@
 		4436BE682ACB16E600D56036 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436BE672ACB16E600D56036 /* RequestBuilder.swift */; };
 		44B924E42AC62B9A00FF118B /* TaskCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B924E32AC62B9A00FF118B /* TaskCancellation.swift */; };
 		7E1861D12AB5FA7100C1B32C /* TaskOnceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */; };
+		7E7822FA2AFC3D4B00EB218B /* ViewModelify in Frameworks */ = {isa = PBXBuildFile; productRef = 7E7822F92AFC3D4B00EB218B /* ViewModelify */; };
+		7E7822FC2AFCE5E700EB218B /* AgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7822FB2AFCE5E700EB218B /* AgeView.swift */; };
 		7E8158E12AB0745B0007C303 /* PokemonDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */; };
 		7E8158E32AB074BE0007C303 /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E22AB074BE0007C303 /* URLSessionExtensions.swift */; };
 		7E8158E62AB0882B0007C303 /* PokemonPreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E52AB0882B0007C303 /* PokemonPreviewData.swift */; };
@@ -70,6 +72,7 @@
 		4436BE672ACB16E600D56036 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		44B924E32AC62B9A00FF118B /* TaskCancellation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCancellation.swift; sourceTree = "<group>"; };
 		7E1861D02AB5FA7100C1B32C /* TaskOnceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOnceModifier.swift; sourceTree = "<group>"; };
+		7E7822FB2AFCE5E700EB218B /* AgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeView.swift; sourceTree = "<group>"; };
 		7E8158DF2AAFDEEC0007C303 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7E8158E02AB0745B0007C303 /* PokemonDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDataProtocol.swift; sourceTree = "<group>"; };
 		7E8158E22AB074BE0007C303 /* URLSessionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtensions.swift; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E7822FA2AFC3D4B00EB218B /* ViewModelify in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +213,7 @@
 				7EB8EC8D2AAFD5EC009DF876 /* PokemonColorsView.swift */,
 				7ED789C12AF7B7BA00AB3E34 /* TimerView.swift */,
 				7EB8EC8C2AAFD5EC009DF876 /* PokemonColorView.swift */,
+				7E7822FB2AFCE5E700EB218B /* AgeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,6 +288,9 @@
 			dependencies = (
 			);
 			name = iosMV;
+			packageProductDependencies = (
+				7E7822F92AFC3D4B00EB218B /* ViewModelify */,
+			);
 			productName = iosMV;
 			productReference = 7EB8EC5D2AAFD575009DF876 /* iosMV.app */;
 			productType = "com.apple.product-type.application";
@@ -360,6 +368,7 @@
 			mainGroup = 7EB8EC542AAFD575009DF876;
 			packageReferences = (
 				7ED789BE2AF7225700AB3E34 /* XCRemoteSwiftPackageReference "ViewInspector" */,
+				7E7822F82AFC3D4B00EB218B /* XCRemoteSwiftPackageReference "viewmodelify-swift" */,
 			);
 			productRefGroup = 7EB8EC5E2AAFD575009DF876 /* Products */;
 			projectDirPath = "";
@@ -408,6 +417,7 @@
 				7EB8ECB32AAFD64F009DF876 /* LaunchArguments.swift in Sources */,
 				7EB8EC952AAFD5ED009DF876 /* PokemonColorView.swift in Sources */,
 				7E8158E32AB074BE0007C303 /* URLSessionExtensions.swift in Sources */,
+				7E7822FC2AFCE5E700EB218B /* AgeView.swift in Sources */,
 				7EB8ECBB2AAFD6B2009DF876 /* Env.swift in Sources */,
 				7ED789C42AF7B82200AB3E34 /* TimerWrapper.swift in Sources */,
 				7ED789C22AF7B7BA00AB3E34 /* TimerView.swift in Sources */,
@@ -759,6 +769,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7E7822F82AFC3D4B00EB218B /* XCRemoteSwiftPackageReference "viewmodelify-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sisoje/viewmodelify-swift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		7ED789BE2AF7225700AB3E34 /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nalexn/ViewInspector.git";
@@ -770,6 +788,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7E7822F92AFC3D4B00EB218B /* ViewModelify */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E7822F82AFC3D4B00EB218B /* XCRemoteSwiftPackageReference "viewmodelify-swift" */;
+			productName = ViewModelify;
+		};
 		7ED789BF2AF7225700AB3E34 /* ViewInspector */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7ED789BE2AF7225700AB3E34 /* XCRemoteSwiftPackageReference "ViewInspector" */;

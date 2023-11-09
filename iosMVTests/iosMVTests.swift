@@ -24,6 +24,25 @@ final class iosMVTests: XCTestCase {
         XCTAssertFalse(Env.isPreviews)
     }
 
+    @MainActor func testPokemonVm() throws {
+        var model = PokemonColorsViewModel()
+        let exp1 = expectation(description: "task finished")
+        let exp2 = model.on(\.inspect) { view in
+            XCTAssertNil(try view.actualView().pokemonColors.value)
+            Task {
+                defer { exp1.fulfill() }
+                try await view.actualView().loadAsync()
+                XCTAssertEqual(try view.actualView().pokemonColors.value?.count, 1)
+            }
+        }
+        autoreleasepool {
+            ViewHosting.host(
+                view: model.environment(\.pokemonData, PokemonPreviewData())
+            )
+        }
+        wait(for: [exp1, exp2], timeout: 0.1)
+    }
+
     @MainActor func testTimer() throws {
         struct DummyView: View {
             @TimerWrapper(interval: 1, limit: 3) public var timeCounter
