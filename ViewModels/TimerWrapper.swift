@@ -7,18 +7,15 @@
 
 import Combine
 import SwiftUI
+import ViewModelify
 
+@ViewModelify
 @propertyWrapper struct TimerWrapper: DynamicProperty, @unchecked Sendable {
     @Environment(\.timerScheduler) private var timerScheduler
-    @State private var elapsedTime: TimeInterval = 0
+    @State var elapsedTime: TimeInterval = 0
     @State private var invalidator: AnyCancellable?
     let interval: TimeInterval
     let limit: TimeInterval
-
-    var wrappedValue: TimeInterval {
-        get { elapsedTime }
-        nonmutating set { elapsedTime = newValue }
-    }
 
     func start() {
         invalidator = AnyCancellable(

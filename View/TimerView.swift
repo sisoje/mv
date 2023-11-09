@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct TimerView: View {
-    @TimerWrapper(interval: 0.125, limit: 3) var elapsedTime
+    @TimerWrapper(interval: 0.125, limit: 3) var model
     var body: some View {
-        Text("Seconds elapsed: \(elapsedTime)")
+        Text("Seconds elapsed: \(model.elapsedTime)")
             .onAppear {
-                _elapsedTime.start()
+                model.start()
             }
     }
 }

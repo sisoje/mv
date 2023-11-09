@@ -24,7 +24,7 @@ final class iosMVTests: XCTestCase {
         XCTAssertFalse(Env.isPreviews)
     }
 
-    @MainActor func testPokemonVm() throws {
+    @MainActor func testPokemonModel() throws {
         var model = PokemonColorsViewModel()
         let exp1 = expectation(description: "task finished")
         let exp2 = model.on(\.inspect) { view in
@@ -44,19 +44,12 @@ final class iosMVTests: XCTestCase {
     }
 
     @MainActor func testTimer() throws {
-        struct DummyView: View {
-            @TimerWrapper(interval: 1, limit: 3) public var timeCounter
-            var rawWrapper: TimerWrapper { _timeCounter }
-            var didAppear: ((Self) -> Void)? // framework requriment
-            var body: some View { EmptyView().onAppear { didAppear?(self) } }
-        }
+        var sut = TimerWrapper(interval: 1, limit: 3)
 
-        var sut = DummyView()
-
-        let exp1 = sut.on(\.didAppear) { view in
-            XCTAssertEqual(try view.actualView().timeCounter, 0)
-            try view.actualView().rawWrapper.start()
-            XCTAssertEqual(try view.actualView().timeCounter, 1)
+        let exp1 = sut.on(\.inspect) { view in
+            XCTAssertEqual(try view.actualView().elapsedTime, 0)
+            try view.actualView().start()
+            XCTAssertEqual(try view.actualView().elapsedTime, 1)
         }
 
         let exp2 = expectation(description: "timer started")
