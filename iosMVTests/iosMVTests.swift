@@ -30,9 +30,9 @@ final class iosMVTests: XCTestCase {
         let exp2 = model.on(\.inspect) { view in
             XCTAssertNil(try view.actualView().pokemonColors.value)
             Task {
-                defer { exp1.fulfill() }
                 try await view.actualView().loadAsync()
                 XCTAssertEqual(try view.actualView().pokemonColors.value?.count, 1)
+                exp1.fulfill()
             }
         }
         autoreleasepool {
