@@ -1,10 +1,12 @@
 import SwiftUI
 
 struct PokemonColorsView: View {
+    @StateObject var vm = StateLogicViewmodel()
     @PokemonColorsViewModel var viewModel
     var body: some View {
         NavigationView {
             VStack {
+                vm.body
                 AgeView()
                 TimerView()
                 Button("Reload") {

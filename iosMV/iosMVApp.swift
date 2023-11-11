@@ -1,5 +1,14 @@
 import SwiftUI
 
+class StateLogicViewmodel: ObservableObject {
+    @Published var age = 21
+    func makeBirthdayParty() { age += 1 }
+}
+
+extension StateLogicViewmodel {
+    var body: some View { Button("My \(age + 1). bithday party", action: makeBirthdayParty) }
+}
+
 @main
 struct iosMVApp: App {
     @Environment(\.scenePhase) var scenePhase
