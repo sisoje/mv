@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "swiftui-macros",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Wouter01/SwiftUI-Macros.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5ab0ff5d49497b9b78a217621ea3ee0e1f905ee9"
+      }
+    },
+    {
       "identity" : "viewinspector",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nalexn/ViewInspector.git",

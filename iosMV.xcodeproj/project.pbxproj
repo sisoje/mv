@@ -16,6 +16,7 @@
 		7E8158E32AB074BE0007C303 /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E22AB074BE0007C303 /* URLSessionExtensions.swift */; };
 		7E8158E62AB0882B0007C303 /* PokemonPreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8158E52AB0882B0007C303 /* PokemonPreviewData.swift */; };
 		7E95C7A42B004BF0005CDC71 /* Parent+ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E95C7A32B004BF0005CDC71 /* Parent+ChildView.swift */; };
+		7E95C7A72B016D80005CDC71 /* SwiftUIMacros in Frameworks */ = {isa = PBXBuildFile; productRef = 7E95C7A62B016D80005CDC71 /* SwiftUIMacros */; };
 		7EB8EC612AAFD575009DF876 /* iosMVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB8EC602AAFD575009DF876 /* iosMVApp.swift */; };
 		7EB8EC652AAFD577009DF876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB8EC642AAFD577009DF876 /* Assets.xcassets */; };
 		7EB8EC682AAFD577009DF876 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB8EC672AAFD577009DF876 /* Preview Assets.xcassets */; };
@@ -118,6 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E7822FA2AFC3D4B00EB218B /* ViewModelify in Frameworks */,
+				7E95C7A72B016D80005CDC71 /* SwiftUIMacros in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +295,7 @@
 			name = iosMV;
 			packageProductDependencies = (
 				7E7822F92AFC3D4B00EB218B /* ViewModelify */,
+				7E95C7A62B016D80005CDC71 /* SwiftUIMacros */,
 			);
 			productName = iosMV;
 			productReference = 7EB8EC5D2AAFD575009DF876 /* iosMV.app */;
@@ -372,6 +375,7 @@
 			packageReferences = (
 				7ED789BE2AF7225700AB3E34 /* XCRemoteSwiftPackageReference "ViewInspector" */,
 				7E7822F82AFC3D4B00EB218B /* XCRemoteSwiftPackageReference "viewmodelify-swift" */,
+				7E95C7A52B016D80005CDC71 /* XCRemoteSwiftPackageReference "SwiftUI-Macros" */,
 			);
 			productRefGroup = 7EB8EC5E2AAFD575009DF876 /* Products */;
 			projectDirPath = "";
@@ -781,6 +785,14 @@
 				kind = branch;
 			};
 		};
+		7E95C7A52B016D80005CDC71 /* XCRemoteSwiftPackageReference "SwiftUI-Macros" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Wouter01/SwiftUI-Macros.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		7ED789BE2AF7225700AB3E34 /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nalexn/ViewInspector.git";
@@ -796,6 +808,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7E7822F82AFC3D4B00EB218B /* XCRemoteSwiftPackageReference "viewmodelify-swift" */;
 			productName = ViewModelify;
+		};
+		7E95C7A62B016D80005CDC71 /* SwiftUIMacros */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E95C7A52B016D80005CDC71 /* XCRemoteSwiftPackageReference "SwiftUI-Macros" */;
+			productName = SwiftUIMacros;
 		};
 		7ED789BF2AF7225700AB3E34 /* ViewInspector */ = {
 			isa = XCSwiftPackageProductDependency;

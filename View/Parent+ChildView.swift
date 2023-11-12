@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ChildView: View {
-    let model: PokemonColorsModel
+    @Environment(\.pokemonColorsModel) var model: PokemonColorsModel!
+    //@PokemonColorsModel private var model
     var body: some View {
         HStack {
             Text("Results \(model.pokemonColors.value?.count ?? 0)")
@@ -23,10 +24,12 @@ struct ChildView: View {
 }
 
 struct ParentView: View {
-    @PokemonColorsModel private var model
+    @PokemonColorsModel var model
     var body: some View {
         VStack {
-            ChildView(model: model)
+            ChildView()
+                .environment(\.pokemonColorsModel, model)
+                
             List(model.pokemonColors.value?.results ?? [], id: \.name) { pokemonColor in
                 Text(pokemonColor.name)
             }
@@ -36,7 +39,7 @@ struct ParentView: View {
 
 #Preview {
     VStack {
-        ChildView(model: .init())
+        ChildView()
         ParentView()
     }
     .environment(\.pokemonData, PokemonPreviewData())
