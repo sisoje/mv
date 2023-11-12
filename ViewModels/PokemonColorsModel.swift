@@ -10,7 +10,7 @@ import SwiftUI
 import ViewModelify
 
 @ViewModelify
-@propertyWrapper @MainActor struct PokemonColorsViewModel: DynamicProperty {
+@propertyWrapper @MainActor struct PokemonColorsModel: DynamicProperty {
     @Environment(\.pokemonData) private var pokemonData
     @State var pokemonColors: LoadableValue<PokemonColorsResponse> = .init()
     @State private var cancellable: AnyCancellable?

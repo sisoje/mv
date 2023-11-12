@@ -25,7 +25,7 @@ final class iosMVTests: XCTestCase {
     }
 
     @MainActor func testPokemonModel() throws {
-        var model = PokemonColorsViewModel()
+        var model = PokemonColorsModel()
         let exp1 = expectation(description: "task finished")
         let exp2 = model.on(\.inspect) { view in
             XCTAssertNil(try view.actualView().pokemonColors.value)
