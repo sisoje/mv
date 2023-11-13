@@ -32,11 +32,11 @@ What most of devs do is they take a nice SwiftUI view and tear it apart, making 
 
 ### You broke it
 
-Please dont do this. ObservableObject is just for sharing state between unrelated views using EnvironmentObject or ObservedObject. Its not ment to be used for chopping a nice working SwiftUI view into broken pieces that dont work.
+Please dont do this. ObservableObject is just for sharing state between unrelated views using EnvironmentObject. Its not ment to be used for chopping a nice working SwiftUI view into broken pieces that dont work.
 
 ### Dependency injection
 
-Environment and EnvironmentObject do not work inside the class. We can not inject dependencies inside a class. It works only inside the struct that is inside the view hierarchy. Also, SwiftData does not work inside the class. Because its not the way to do it.
+Environment and EnvironmentObject do not work inside the class. We can not inject dependencies inside a class in SwiftUI. It works only inside the struct that is inside the view hierarchy. Also, SwiftData does not work inside the class. Because its not the way to do it.
 
 ### Pure model
 
