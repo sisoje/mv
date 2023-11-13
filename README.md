@@ -9,7 +9,7 @@
 
 Many tutorials lead you to believe that MVVM is the way to go in SwiftUI. This may be incorrect. Apple made SwiftUI because they wanted to eliminate MV pattern derivatives and the boilerplate and the problems they introduce. Please dont fight the framework. If you like MVVM just dont use SwiftUI.
 
-### SwiftUI eliminates View completely
+### SwiftUI eliminates view completely
 
 There is no need for the **View**Model when there is no View. Here is the proof: 
 
