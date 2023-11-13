@@ -24,7 +24,7 @@ See, there is just an Int with a protocol expension, a body, a simple function. 
 
 ### But decoupling is good, right?
 
-Decoupling can be good if done right and for the right reason. We dont do decoupling decoupling for fun or to make code nice. We do it for code reuse and for testing in isolation.
+Decoupling can be good if done for the right reason. We dont do decoupling decoupling for fun or to make code nice. We do it for code reuse and for testing in isolation.
 
 ### Stop abusing ObservableObject
 
