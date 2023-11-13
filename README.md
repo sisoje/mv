@@ -11,7 +11,7 @@ Many tutorials lead you to believe that MVVM is the way to go in SwiftUI. This m
 
 ### SwiftUI eliminates view completely
 
-There is no need for the **View**Model when there is no View. Here is the proof: 
+There is no need for the **View**Model when there is no **view**, no frame, nothing. Here is the proof: 
 
 ```
 extension Int: View {
@@ -20,7 +20,7 @@ extension Int: View {
     }
 }
 ```
-See, there is just an Int with a protocol expension, a body, a simple function. There is no frame, there is no view! If you look closely the body **IS** the business logic. You can not decouple business logic from this SwiftUI View because it makes no sense.
+See, there is just an Int with a protocol extension, a body, a simple function. There is no frame, there is no view! If you look closely the body **IS** the business logic. You can not decouple business logic from this SwiftUI View because it makes no sense.
 
 ### But decoupling is good, right?
 
