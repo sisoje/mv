@@ -20,7 +20,7 @@ extension Int: View {
     }
 }
 ```
-See, there is just an Int with a protocol expension, a body, a simple function! If you look closely the body **IS** the business logic. You can not decouple business logic from this SwiftUI View because it makes no sense.
+See, there is just an Int with a protocol expension, a body, a simple function. There is no frame, there is no view! If you look closely the body **IS** the business logic. You can not decouple business logic from this SwiftUI View because it makes no sense.
 
 ### But decoupling is good, right?
 
