@@ -20,11 +20,11 @@ extension Int: View {
     }
 }
 ```
-See, there is just an Int with a protocol expension, a body, a simple function! If you look closely the body **IS** the business logic. You can not decouple it from the SwiftUI View because it makes no sense.
+See, there is just an Int with a protocol expension, a body, a simple function! If you look closely the body **IS** the business logic. You can not decouple business logic from this SwiftUI View because it makes no sense.
 
 ### But decoupling is good, right?
 
-Decoupling can be good if done right and for the right reason. We dont doo decoupling for fun or to make code nice. We do it for code reuse and for testing in isolation.
+Decoupling can be good if done right and for the right reason. We dont do decoupling decoupling for fun or to make code nice. We do it for code reuse and for testing in isolation.
 
 ### Stop abusing ObservableObject
 
