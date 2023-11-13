@@ -94,7 +94,7 @@ Then we simply reflect the state on the UI with some modifiers:
 
 ## Unit testing SwiftUI views
 
-The only way to properly test SwiftUI views is with ViewInspector. It requires a bit of setting up. We have macro `@ViewModelify` macro in [viewmodelify-swif](https://github.com/sisoje/viewmodelify-swift) repo for that.
+The only way to properly test SwiftUI views is with [ViewInspector](https://github.com/nalexn/ViewInspector). It requires a bit of setting up. We have macro `@ViewModelify` in [viewmodelify-swif](https://github.com/sisoje/viewmodelify-swift) for that.
 
 ## Network snapshotting tests
 
