@@ -7,7 +7,7 @@
 
 # Apple vs MV patterns
 
-Many tutorials lead you to believe that MVVM is the way to go in SwiftUI. This is very incorrect! Apple made SwiftUI because they wanted to eliminate MV pattern derivatives. Please dont fight with the framework. If you like MVVM just dont use SwiftUI.
+Many tutorials lead you to believe that MVVM is the way to go in SwiftUI. This may be incorrect. Apple made SwiftUI because they wanted to eliminate MV pattern derivatives. Please dont fight with the framework. If you like MVVM just dont use SwiftUI.
 
 ### SwiftUI eliminates View completely
 
