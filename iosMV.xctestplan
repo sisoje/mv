@@ -26,7 +26,6 @@
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:iosMV.xcodeproj",
         "identifier" : "7EB8EC6C2AAFD577009DF876",
@@ -34,7 +33,6 @@
       }
     },
     {
-      "parallelizable" : true,
       "target" : {
         "containerPath" : "container:iosMV.xcodeproj",
         "identifier" : "7EB8EC762AAFD578009DF876",

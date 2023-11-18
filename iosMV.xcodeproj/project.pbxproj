@@ -786,7 +786,7 @@
 			repositoryURL = "https://github.com/sisoje/viewmodelify-swift.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.0.1;
+				version = 1.0.2;
 			};
 		};
 		7E95C7A52B016D80005CDC71 /* XCRemoteSwiftPackageReference "SwiftUI-Macros" */ = {
