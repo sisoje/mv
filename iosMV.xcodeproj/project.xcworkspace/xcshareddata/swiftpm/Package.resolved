@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sisoje/viewmodelify-swift.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "45a2b91190f65c6006812c2c39e9e0a7c68ff9bc"
+        "revision" : "d9341ed36c7d1ec6b35d3f48da78c901caf610e3",
+        "version" : "1.0.1"
       }
     }
   ],

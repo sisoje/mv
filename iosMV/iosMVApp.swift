@@ -1,4 +1,20 @@
 import SwiftUI
+import Combine
+
+final class NiceViewModel: ObservableObject {
+  @Published private var counter = 0
+  private func inc() { counter += 1 }
+  var body: some View {
+      Button("Inc: \(counter)", action: inc)
+  }
+}
+
+struct NiceView: View {
+  @StateObject private var vm = NiceViewModel()
+  var body: some View {
+    vm.body
+  }
+}
 
 class StateLogicViewmodel: ObservableObject {
     @Published var age = 21
@@ -19,7 +35,8 @@ struct iosMVApp: App {
                 URLProtocol.registerClass(MockURLProtocol.self)
                 try! MockURLProtocol.loadResponses(file: fileName)
             }
-            if AppLaunchConfig.environmentDic[.recordResponsesFileName] != nil {
+            if let file = AppLaunchConfig.environmentDic[.recordResponsesFileName] {
+                InterceptURLProtocol.file = file
                 URLProtocol.registerClass(InterceptURLProtocol.self)
             }
             if AppLaunchConfig.argumentSet.contains(.disableAnimations) {
@@ -42,7 +59,7 @@ struct iosMVApp: App {
                     scenePhase == .inactive,
                     let fileName = AppLaunchConfig.environmentDic[.recordResponsesFileName]
                 {
-                    try! InterceptURLProtocol.saveResponses(file: fileName)
+                    try! InterceptURLProtocol.saveResponses()
                 }
             }
         }

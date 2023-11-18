@@ -14,11 +14,13 @@ import ViewModelify
     var text: Text {
         Text("My age is \(age)")
     }
+
     func birthdayParty() {
         age += 1
     }
 }
 
+@ViewInspectify
 struct AgeView: View {
     @AgeViewModel var vm
     var body: some View {

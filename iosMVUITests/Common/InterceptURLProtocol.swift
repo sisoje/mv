@@ -2,6 +2,7 @@ import Foundation
 import OSLog
 
 @MainActor final class InterceptURLProtocol: URLProtocol {
+    public static var file: String?
     private static let interceptHeader = "X-Intercepted-By"
     
     private static var requests: [URLRequest] = [] {
@@ -14,7 +15,10 @@ import OSLog
     
     private static var responses: [Int: (Data?, URLResponse?, Error?)] = [:]
     
-    static func saveResponses(file: String) throws {
+    static func saveResponses() throws {
+        guard let file else {
+            return
+        }
         let mocks: [CodableRequestAndReponse] = requests.enumerated().map { index, request in
             let dataResponseError = responses[index] ?? (nil, nil, nil)
             return CodableRequestAndReponse(
@@ -41,6 +45,7 @@ import OSLog
         let task = URLSession.shared.dataTask(with: interceptRequest) { data, response, error in
             DispatchQueue.main.async {
                 Self.responses[index] = (data, response, error)
+                try? Self.saveResponses()
             }
             if let error = error {
                 self.client?.urlProtocol(self, didFailWithError: error)
