@@ -25,9 +25,9 @@ final class iosMVTests: XCTestCase {
     }
 
     @MainActor func testPokemonModel() throws {
-        var model = PokemonColorsModel()
+        let model = PokemonColorsModel()
         let exp1 = expectation(description: "task finished")
-        let exp2 = model.on(\.inspection.didAppear) { view in
+        let exp2 = model.inspection.inspect { view in
             XCTAssertNil(try view.actualView().pokemonColors.value)
             Task {
                 try await view.actualView().loadAsync()
@@ -44,9 +44,9 @@ final class iosMVTests: XCTestCase {
     }
 
     @MainActor func testTimer() throws {
-        var sut = TimerWrapper(interval: 1, limit: 3)
+        let sut = TimerWrapper(interval: 1, limit: 3)
 
-        let exp1 = sut.on(\.inspection.didAppear) { view in
+        let exp1 = sut.inspection.inspect { view in
             XCTAssertEqual(try view.actualView().elapsedTime, 0)
             try view.actualView().start()
             XCTAssertEqual(try view.actualView().elapsedTime, 1)

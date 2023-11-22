@@ -20,10 +20,10 @@ import ViewModelify
     }
 }
 
-@ViewInspectify
+@InspectedView
 struct AgeView: View {
     @AgeViewModel var vm
-    var body: some View {
+    var inspectedBody: some View {
         VStack {
             Button("Birthday party", action: vm.birthdayParty)
             vm.text
