@@ -43,6 +43,18 @@ final class iosMVTests: XCTestCase {
         wait(for: [exp1, exp2], timeout: 0.1)
     }
 
+    func testAgeView() throws {
+        let sut = AgeView()
+        let exp = sut.inspection.inspect { view in
+            _ = try view.find(text: "Birthday party 21")
+            let btn = try view.find(ViewType.VStack.self).button(0)
+            try btn.tap()
+            _ = try view.find(text: "Birthday party 22")
+        }
+        ViewHosting.host(view: sut)
+        wait(for: [exp], timeout: 1)
+    }
+
     @MainActor func testTimer() throws {
         let sut = TimerWrapper(interval: 1, limit: 3)
 
